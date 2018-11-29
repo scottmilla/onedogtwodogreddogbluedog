@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-dogsurvey',
-  templateUrl: './dogsurvey.component.html',
-  styleUrls: ['./dogsurvey.component.scss'],
+  selector: 'app-navigationbar',
+  templateUrl: './navigationbar.component.html',
+  styleUrls: ['./navigationbar.component.scss'],
   providers: [NgbModule]
 })
-export class DogsurveyComponent implements OnInit {
+export class NavigationbarComponent implements OnInit {
 
   constructor() { }
 
