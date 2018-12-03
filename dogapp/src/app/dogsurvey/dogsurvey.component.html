@@ -2,7 +2,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 <form id='requestForm'  (change)="formchange($event)">
   <div class="form-group">
-    <label for="environmentSelect">Where will you raise your dog?</label>
+    <label for="environmentSelect">I'm planning to raise my dog in a</label>
     <select class="form-control" id="environmentSelect" >
       <option selected>...</option>
       <option value="House">House</option>
@@ -11,7 +11,7 @@
     </select>
   </div>
   <div class="form-group">
-    <label for="sizeSelect">What size dog would you like?</label>
+    <label for="sizeSelect">I want a dog who is</label>
     <select class="form-control" id="sizeSelect" >
       <option selected>...</option>
       <option value = "Small">Small</option>
@@ -21,7 +21,7 @@
     </select>
   </div>
   <div class="form-group">
-    <label for="energySelect">Desired Energy Level</label>
+    <label for="energySelect">My dog's energy level should be</label>
     <select class="form-control" id="energySelect" >
       <option selected>...</option>
       <option value="High">High</option>
@@ -31,16 +31,7 @@
   </div>  
   
   <div class="form-group">
-    <label for="otherSelect">Do you own other pets?</label>
-    <select class="form-control" id="otherSelect" >
-      <option selected>...</option>
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-    </select>
-  </div>  
-  
-  <div class="form-group">
-    <label for="timeSelect">How often will your dog be alone?</label>
+    <label for="timeSelect">My dog will be alone</label>
     <select class="form-control" id="timeSelect" >
       <option selected>...</option>
       <option value="little">Very little</option>
@@ -51,7 +42,7 @@
   </div>
 
   <div class="form-group">
-    <label for="priceSelect">What is your price range?</label>
+    <label for="priceSelect">My price range is</label>
     <select class="form-control" id="priceSelect" >
       <option selected>...</option>
       <option value="0to500">0-$500</option>
@@ -60,6 +51,15 @@
       <option value="2000+">$2000+</option>
     </select>
   </div>
+
+  <div class="form-group">
+    <label for="otherSelect">Do you own other pets?</label>
+    <select class="form-control" id="otherSelect" >
+      <option selected>...</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+  </div>  
   
   <div class="form-group">
     <label for="specialSelect">Are you open to a dog with special needs?</label>

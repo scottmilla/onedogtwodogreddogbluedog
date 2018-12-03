@@ -4,13 +4,23 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DogsurveyComponent } from './dogsurvey/dogsurvey.component';
-import { LoginComponent } from './login/login.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { WhatwedoComponent } from './whatwedo/whatwedo.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { NavigationbarComponent } from './navigationbar/navigationbar.component';
+import { DogregisterComponent } from './dogregister/dogregister.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DogsurveyComponent,
-    LoginComponent
+    HomePageComponent,
+    CarouselComponent,
+    WhatwedoComponent,
+    AboutusComponent,
+    NavigationbarComponent,
+    DogregisterComponent
   ],
   imports: [
     BrowserModule,
