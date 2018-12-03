@@ -9,6 +9,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { WhatwedoComponent } from './whatwedo/whatwedo.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { NavigationbarComponent } from './navigationbar/navigationbar.component';
+import { DogregisterComponent } from './dogregister/dogregister.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavigationbarComponent } from './navigationbar/navigationbar.component'
     CarouselComponent,
     WhatwedoComponent,
     AboutusComponent,
-    NavigationbarComponent
+    NavigationbarComponent,
+    DogregisterComponent
   ],
   imports: [
     BrowserModule,
