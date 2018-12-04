@@ -98,6 +98,17 @@ const Dog = require('../model/Dog');
 exports.getDog = function (req, res, next){
 
 }
+exports.getAllDogs = function(req,res,next){
+    // Dog.find({ location: "10016", function()})
+    // res.status(201).json({
+    //     // dog: Dog.find({ name: "coco"}).pretty
+    // });
+    Dog.find({}, function (err, allDogs) {
+        res.status(201).json({
+            dog: allDogs
+        })
+    });
+}
 
 exports.registerDog = function (req, res, next){
     const name = req.body.name;
