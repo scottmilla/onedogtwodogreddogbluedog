@@ -98,6 +98,16 @@ const Dog = require('../model/Dog');
 exports.getDog = function (req, res, next){
 
 }
+exports.getAllDogs = function(req,res,next){
+    var array = [];
+    var obj = Dog.findOne();
+    for (var key in obj) {
+        array.push(key);
+    }
+    res.status(201).json({
+        key
+    });
+}
 
 exports.registerDog = function (req, res, next){
     const name = req.body.name;
@@ -119,10 +129,33 @@ exports.registerDog = function (req, res, next){
     else if (!organization)
         return res.status(422).send ({error: 'No organization entered'})
     
-    Dog.findOne({'breed': breed}, function (err, Dog) {
+    Dog.findOne({'breed': breed}, function (err, existingDog) {
         if (err) { return next(err); }
+        else if (existingDog){
+            res.status(422).send ({error: 'Dog Exists'})
+        }
         else{
-            return res.status(422).send ({error:"complete"})
+            let dog = new Dog({
+                // email: email,
+                // password: password,
+                // provider: 'local',
+                // roles: ['User'],
+                // auths: { clients: [clientid], apis: authAPIs },
+                // profile: { firstName: firstName, lastName: lastName }
+                name: name,
+                attributes: attributes,
+                breed: breed,
+                summary: summary,
+                location: location,
+                organization: organization
+            });
+            dog.save(function (err, user) {
+                if (err) { return next(err); }
+                let dogInfo = dog.toJson();
+                res.status(201).json({
+                    dog: dogInfo
+                });
+            });
         }
     });
     // Dog.findOne({'breed': breed}, function(err, dog) {
