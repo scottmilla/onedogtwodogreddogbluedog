@@ -20,7 +20,8 @@ const DogSchema = new Schema({
         required: true
     },
     photo: { 
-
+        data: Buffer, 
+        contentType: String 
     },
 
     location: {
