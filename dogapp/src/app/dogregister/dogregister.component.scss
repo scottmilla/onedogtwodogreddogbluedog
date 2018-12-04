@@ -6,6 +6,16 @@
     font-size: 140%;
 }
 
+.left-text{
+    text-align: left !important;
+    width: 100%;
+}
+
+.right-text{
+    text-align: left !important;
+    justify-content: right !important;
+}
+
 body{
     background-color: #fefce6;
     padding-top: 20px;
