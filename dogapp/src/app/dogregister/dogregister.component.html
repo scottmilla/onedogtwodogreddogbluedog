@@ -1,116 +1,121 @@
-<form id="requestForm" (change)="formchange($event)">
-  <div class="form-group">
-    <label for="dogNameReg">Dog name:</label>
-    <input type="text" name="dogName"><br>
-  </div>
-  <div class="form-group">
-    <label for="breedReg">Dog breed: </label>
-    <input type="text" name="breed"><br>
-  </div>
-  <div class="form-group">
-    <label for="summaryReg">Add a quick summary about your dog: </label>
-    <textarea name="summary" rows="10" cols="30"></textarea>
-  </div>
+<body>
+  <div class="container-fluid">
+    <form id="requestForm" (change)="formchange($event)">
+      <div class="form-group row">
+        <label for="dogNameReg" class="left-text col-sm-3">Dog name:</label><br>
+        <input type="text" name="dogName" style="width: 100%" class="right-text col-sm-9" placeholder="Name"><br>
+      </div>
+      <div class="form-group row">
+        <label for="breedReg" class="col-sm-3" style="text-align: left">Dog breed:</label><br>
+        <input type="text" name="breed" style="width: 100%" class="col-sm-9" placeholder="Breed"><br>
+      </div>
+      <div class="form-group">
+        <label for="summaryReg" class="row" style="padding-left: 15px">Add a quick summary about your dog: </label>
+        <textarea name="summary" rows="10" cols="30" style="width: 100%" placeholder="Enter text here"></textarea>
+      </div>
 
-  <div class="form-group">
-    <label for="photoReg">Add a photo of your dog: </label>
-    <input type="file" name="photo" accept="image/*"><br>
-  </div>
+      <div class="form-group">
+        <label for="photoReg">Add a photo of your dog: </label><br>
+        <input type="file" name="photo" accept="image/*" id="image-input"> <br>
+      </div>
 
-  <div class="form-group">
-    <label for="orgNameReg">Name of your rescue organization: </label>
-    <input type="text" name="orgName"><br>
-  </div>
+      <div class="form-group row">
+        <label for="orgNameReg" class="col-sm-5 left-text">Name of your rescue organization: </label><br>
+        <input type="text" name="orgName" style="width: 100%" class="col-sm-7 right-text" placeholder="Organization Name"><br>
+      </div>
 
-  <div class="form-group">
-    <label for="phoneReg">Address of organization: </label>
-    <textarea name="address" rows="4" cols="30"></textarea>
-  </div>
+      <div class="form-group row">
+        <label for="addressReg" class="col-sm-4" style="text-align: left">Address of organization: </label><br>
+        <textarea name="address" rows="4" cols="30" style="width: 100%" class="col-sm-8 right-text" placeholder="Address"></textarea>
+      </div>
 
-  <div class="form-group">
-    <label for="phoneReg">Phone number: </label>
-    <input type="text" name="phone"><br>
-  </div>
+      <div class="form-group row">
+        <label for="phoneReg" class="col-sm-3" style="text-align: left">Phone number:  </label>
+        <input type="tel" name="phone" id="example-tel-input" style="width: 100%" class="col-sm-9" placeholder="5555555555"><br>
+      </div>
 
-  <div class="form-group">
-    <label for="emailReg">Email address: </label>
-    <input type="text" name="email"><br>
-  </div>
-  <div class="form-group">
-    <label for="environmentReg">This dog should be raised in a</label>
-    <select class="form-control" id="environmentSelect" >
-      <option selected>...</option>
-      <option value="House">House</option>
-      <option value="Apartment">Apartment</option>
-      <option value="CountrySide">Countryside</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="sizeReg">This dog is</label>
-    <select class="form-control" id="sizeSelect" >
-      <option selected>...</option>
-      <option value = "Small">Small</option>
-      <option value = "Medium">Medium</option>
-      <option value = "Large">Large</option>
+      <div class="form-group row">
+        <label for="emailReg" class="col-sm-3" style="text-align: left">Email address:</label>
+        <input type="text" name="email" placeholder="name@example.com" style="width: 100%" class="col-sm-9"><br>
+      </div>
+      <div class="form-group">
+        <label for="environmentReg">This dog should be raised in a:</label>
+        <select class="form-control" id="environmentSelect" >
+          <option selected>...</option>
+          <option value="House">House</option>
+          <option value="Apartment">Apartment</option>
+          <option value="CountrySide">Countryside</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="sizeReg">This dog is:</label>
+        <select class="form-control" id="sizeSelect" >
+          <option selected>...</option>
+          <option value = "Small">Small</option>
+          <option value = "Medium">Medium</option>
+          <option value = "Large">Large</option>
 
-    </select>
-  </div>
+        </select>
+      </div>
 
-  <div class="form-group">
-    <label for="energyReg">This dog's energy level is</label>
-    <select class="form-control" id="energySelect" >
-      <option selected>...</option>
-      <option value="High">High</option>
-      <option value="Medium">Medium</option>
-      <option value="Low">Low</option>
-    </select>
-  </div>  
-  
-  <div class="form-group">
-    <label for="otherPetsReg">This dog is able to live with other pets</label>
-    <select class="form-control" id="otherPetsSelect" >
-      <option selected>...</option>
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-    </select>
-  </div>  
-  
-  <div class="form-group">
-    <label for="timeReg">This dog is able to be alone</label>
-    <select class="form-control" id="timeReg" >
-      <option selected>...</option>
-      <option value="little">Very little</option>
-      <option value="hours">A couple hours every day</option>
-      <option value="most">Most of every day</option>
-      <option value="days">Multiple days at a time</option>
-    </select>
-  </div>
+      <div class="form-group">
+        <label for="energyReg">This dog's energy level is:</label>
+        <select class="form-control" id="energySelect" >
+          <option selected>...</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+      </div>  
+      
+      <div class="form-group">
+        <label for="otherPetsReg">This dog is able to live with other pets:</label>
+        <select class="form-control" id="otherPetsSelect" >
+          <option selected>...</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>  
+      
+      <div class="form-group">
+        <label for="timeReg">This dog is able to be alone:</label>
+        <select class="form-control" id="timeReg" >
+          <option selected>...</option>
+          <option value="little">Very little</option>
+          <option value="hours">A couple hours every day</option>
+          <option value="most">Most of every day</option>
+          <option value="days">Multiple days at a time</option>
+        </select>
+      </div>
 
-  <div class="form-group">
-    <label for="priceReg">Per year, maintenance for this dog will cost</label>
-    <select class="form-control" id="priceReg" >
-      <option selected>...</option>
-      <option value="0to500">0-$500</option>
-      <option value="500to1000">$500-$1000</option>
-      <option value="1000to2000">$1000-$2000</option>
-      <option value="2000+">$2000+</option>
-    </select>
+      <div class="form-group">
+        <label for="priceReg">Per year, maintenance for this dog will cost:</label>
+        <select class="form-control" id="priceReg" >
+          <option selected>...</option>
+          <option value="0to500">0-$500</option>
+          <option value="500to1000">$500-$1000</option>
+          <option value="1000to2000">$1000-$2000</option>
+          <option value="2000+">$2000+</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="specialReg">Does this dog have special needs?</label>
+        <select class="form-control" id="specialReg" >
+          <option selected>...</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="hypoReg">Is this dog hypoallergenic?</label>
+        <select class="form-control" id="hypoReg">
+          <option selected>...</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary submitbutton">Register my dog!</button>
+    </form>
   </div>
-  
-  <div class="form-group">
-    <label for="specialReg">Does this dog have special needs?</label>
-    <select class="form-control" id="specialReg" >
-      <option selected>...</option>
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="hypoReg">Is this dog hypoallergenic?</label>
-    <select class="form-control" id="hypoReg">
-      <option selected>...</option>
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-    </select>
-  </div>
-</form>
+</body>

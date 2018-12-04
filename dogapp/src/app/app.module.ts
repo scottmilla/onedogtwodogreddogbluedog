@@ -10,12 +10,17 @@ import { WhatwedoComponent } from './whatwedo/whatwedo.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { NavigationbarComponent } from './navigationbar/navigationbar.component';
 import { RouterModule, Routes } from '@angular/router';
+import { DogregisterComponent } from './dogregister/dogregister.component';
+import { LoginpageComponent } from './loginpage/loginpage.component';
+import { CardComponent } from './card/card.component';
 
 const appRoutes: Routes = [
   {path: '',component: HomePageComponent},
-  {path: 'survey', component: DogsurveyComponent}
+  {path: 'survey', component: DogsurveyComponent},
+  {path: 'register', component: DogregisterComponent},
+  {path: 'login', component: LoginpageComponent},
+  {path: 'card', component: CardComponent}
 ]
-import { DogregisterComponent } from './dogregister/dogregister.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,9 @@ import { DogregisterComponent } from './dogregister/dogregister.component';
     WhatwedoComponent,
     AboutusComponent,
     NavigationbarComponent,
-    DogregisterComponent
+    DogregisterComponent,
+    LoginpageComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
