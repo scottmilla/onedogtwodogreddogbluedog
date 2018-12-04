@@ -12,12 +12,14 @@ import { NavigationbarComponent } from './navigationbar/navigationbar.component'
 import { RouterModule, Routes } from '@angular/router';
 import { DogregisterComponent } from './dogregister/dogregister.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
+import { CardComponent } from './card/card.component';
 
 const appRoutes: Routes = [
   {path: '',component: HomePageComponent},
   {path: 'survey', component: DogsurveyComponent},
   {path: 'register', component: DogregisterComponent},
-  {path: 'login', component: LoginpageComponent}
+  {path: 'login', component: LoginpageComponent},
+  {path: 'card', component: CardComponent}
 ]
 
 @NgModule({
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
     AboutusComponent,
     NavigationbarComponent,
     DogregisterComponent,
-    LoginpageComponent
+    LoginpageComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
