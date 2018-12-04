@@ -99,13 +99,14 @@ exports.getDog = function (req, res, next){
 
 }
 exports.getAllDogs = function(req,res,next){
-    var array = [];
-    var obj = Dog.findOne();
-    for (var key in obj) {
-        array.push(key);
-    }
-    res.status(201).json({
-        key
+    // Dog.find({ location: "10016", function()})
+    // res.status(201).json({
+    //     // dog: Dog.find({ name: "coco"}).pretty
+    // });
+    Dog.find({}, function (err, allDogs) {
+        res.status(201).json({
+            dog: allDogs
+        })
     });
 }
 
