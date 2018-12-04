@@ -1,15 +1,10 @@
 const mongoose = require('mongoose'),
-  Schema = mongoose.Schema,
-  bcrypt = require('bcrypt-nodejs');
+  Schema = mongoose.Schema;
 
 
 const DogSchema = new Schema({
     name: {
         type: String,
-        required: true
-    },
-    id: {
-        type: Number,
         required: true
     },
     attributes: {
@@ -30,6 +25,10 @@ const DogSchema = new Schema({
 
     location: {
         type: Number,
+        required: true
+    },
+    organization: {
+        type: String,
         required: true
     }
 
@@ -87,4 +86,4 @@ DogSchema.methods.toJson = function () {
     // provider: this.provider
   }
 }
-module.exports = mongoose.model('Dog', DogSchema);
+module.exports = mongoose.model('dog', DogSchema);
