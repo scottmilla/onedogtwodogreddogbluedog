@@ -16,6 +16,7 @@ module.exports = function(app) {
     // /api/auth/authorize
     authRoutes.get('/authorize',passportService.requireAuth,AuthenticationController.authorize);
     authRoutes.post('/dogRegister',dogController.registerDog);
+    // /api/auth/dogRegister
     otherRoutes.get('/info',passportService.requireAuth,function(req,res,next){
         res.json({user: req.user.toJson()})});
     apiRoutes.use('/stuff',otherRoutes);

@@ -119,7 +119,7 @@ exports.registerDog = function (req, res, next){
     else if (!organization)
         return res.status(422).send ({error: 'No organization entered'})
     
-    Dog.findOne({'breed': breed,'name': name, 'organization': organization}, function (err, Dog) {
+    Dog.findOne({'breed': breed}, function (err, Dog) {
         if (err) { return next(err); }
         else{
             return res.status(422).send ({error:"complete"})
