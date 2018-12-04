@@ -9,12 +9,16 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { WhatwedoComponent } from './whatwedo/whatwedo.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { NavigationbarComponent } from './navigationbar/navigationbar.component';
+<<<<<<< HEAD
 import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
   {path: '',component: HomePageComponent},
   {path: 'survey', component: DogsurveyComponent}
 ]
+=======
+import { DogregisterComponent } from './dogregister/dogregister.component';
+>>>>>>> 94f8fd5fd2b60236c2da8dcab3d7dc2a48026245
 
 @NgModule({
   declarations: [
@@ -24,7 +28,8 @@ const appRoutes: Routes = [
     CarouselComponent,
     WhatwedoComponent,
     AboutusComponent,
-    NavigationbarComponent
+    NavigationbarComponent,
+    DogregisterComponent
   ],
   imports: [
     BrowserModule,

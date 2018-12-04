@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <body>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
   <div id="question-width">
@@ -81,5 +82,84 @@
       </div>
       <button type="submit" class="btn btn-primary submitbutton">Find me a dog!</button>
     </form><!-- not sure what action to take with button, can change or move to other form -->
+=======
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<form id='requestForm'  (change)="formchange($event)">
+  <div class="form-group">
+    <label for="environmentSelect">I'm planning to raise my dog in a</label>
+    <select class="form-control" id="environmentSelect" >
+      <option selected>...</option>
+      <option value="House">House</option>
+      <option value="Apartment">Apartment</option>
+      <option value="CountrySide">Countryside</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="sizeSelect">I want a dog who is</label>
+    <select class="form-control" id="sizeSelect" >
+      <option selected>...</option>
+      <option value = "Small">Small</option>
+      <option value = "Medium">Medium</option>
+      <option value = "Large">Large</option>
+
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="energySelect">My dog's energy level should be</label>
+    <select class="form-control" id="energySelect" >
+      <option selected>...</option>
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="Low">Low</option>
+    </select>
+  </div>  
+  
+  <div class="form-group">
+    <label for="timeSelect">My dog will be alone</label>
+    <select class="form-control" id="timeSelect" >
+      <option selected>...</option>
+      <option value="little">Very little</option>
+      <option value="hours">A couple hours every day</option>
+      <option value="most">Most of every day</option>
+      <option value="days">Multiple days at a time</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="priceSelect">My price range is</label>
+    <select class="form-control" id="priceSelect" >
+      <option selected>...</option>
+      <option value="0to500">0-$500</option>
+      <option value="500to1000">$500-$1000</option>
+      <option value="1000to2000">$1000-$2000</option>
+      <option value="2000+">$2000+</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="otherSelect">Do you own other pets?</label>
+    <select class="form-control" id="otherSelect" >
+      <option selected>...</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+  </div>  
+  
+  <div class="form-group">
+    <label for="specialSelect">Are you open to a dog with special needs?</label>
+    <select class="form-control" id="specialSelect" >
+      <option selected>...</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="hypoSelect">Does your dog need to be hypoallergenic?</label>
+    <select class="form-control" id="hypoSelect">
+      <option selected>...</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+>>>>>>> 94f8fd5fd2b60236c2da8dcab3d7dc2a48026245
   </div>
 </body>
