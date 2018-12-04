@@ -137,12 +137,6 @@ exports.registerDog = function (req, res, next){
         }
         else{
             let dog = new Dog({
-                // email: email,
-                // password: password,
-                // provider: 'local',
-                // roles: ['User'],
-                // auths: { clients: [clientid], apis: authAPIs },
-                // profile: { firstName: firstName, lastName: lastName }
                 name: name,
                 attributes: attributes,
                 breed: breed,
@@ -159,7 +153,4 @@ exports.registerDog = function (req, res, next){
             });
         }
     });
-    // Dog.findOne({'breed': breed}, function(err, dog) {
-    //     //handle book
-    //   })
 }
