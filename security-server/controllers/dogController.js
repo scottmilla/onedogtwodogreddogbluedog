@@ -120,6 +120,13 @@ exports.getAllDogs = function(req,res,next){
     });
 }
 
+// exports.filterDogs = function(req,res,next){
+//     Dog.find().array.forEach(function(currDog) {
+//         if (currDog.)
+//     });
+// }
+// }
+
 exports.registerDog = function (req, res, next){
     const name = req.body.name;
     const breed = req.body.breed;
