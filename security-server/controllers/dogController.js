@@ -96,13 +96,23 @@ const Dog = require('../model/Dog');
 // }
 
 exports.getDog = function (req, res, next){
-
+    console.log('breed:', req.params.breed);
+    console.log('location:',req.params.location);
+    Dog.find({'breed':req.params.breed,'location':req.params.location}, function (err, foundDogs) {
+        res.status(201).json({
+            dog: foundDogs
+        })
+    });
+}
+exports.deleteAllDogs = function(req,res,next){
+    Dog.deleteMany({}, function(err, response) {
+        if (err){
+            res.status(422).send ({error: 'didnt delete dogs'})
+        }
+    });
+    return res.status(422).send ({error: 'deleted dogs'});
 }
 exports.getAllDogs = function(req,res,next){
-    // Dog.find({ location: "10016", function()})
-    // res.status(201).json({
-    //     // dog: Dog.find({ name: "coco"}).pretty
-    // });
     Dog.find({}, function (err, allDogs) {
         res.status(201).json({
             dog: allDogs
@@ -112,17 +122,23 @@ exports.getAllDogs = function(req,res,next){
 
 exports.registerDog = function (req, res, next){
     const name = req.body.name;
-    const attributes = req.body.attributes;
     const breed = req.body.breed;
+    const environment = req.body.environment;
+    const size = req.body.size;
+    const energy = req.body.energy;
+    const pets = req.body.pets;
+    const alone = req.body.alone;
+    const needs = req.body.needs;
+    const allergies = req.body.allergies;
     const summary = req.body.summary;
     const location = req.body.location;
     const organization = req.body.organization;
     if (!name)
         return res.status(422).send ({error: 'No name entered'})
-    else if (!attributes)
-        return res.status(422).send ({error: 'No attributes entered'})
     else if (!breed)
         return res.status(422).send ({error: 'No breed entered'})
+    else if (!environment||!size||!energy||!pets||!alone||!needs||!allergies)
+        return res.status(422).send ({error: 'Put in all attributes'})
     else if (!summary)
         return res.status(422).send ({error: 'No summary entered'})
     else if (!location)
@@ -130,7 +146,7 @@ exports.registerDog = function (req, res, next){
     else if (!organization)
         return res.status(422).send ({error: 'No organization entered'})
     
-    Dog.findOne({'breed': breed}, function (err, existingDog) {
+    Dog.findOne({'breed': breed,'organization':organization,'name':name}, function (err, existingDog) {
         if (err) { return next(err); }
         else if (existingDog){
             res.status(422).send ({error: 'Dog Exists'})
@@ -138,10 +154,11 @@ exports.registerDog = function (req, res, next){
         else{
             let dog = new Dog({
                 name: name,
-                attributes: attributes,
+                // attributes: attributes,
                 breed: breed,
                 summary: summary,
                 location: location,
+                attributes: {environment:environment,size:size,energy:energy,pets:pets,alone:alone,needs:needs,allergies:allergies},
                 organization: organization
             });
             dog.save(function (err, user) {
