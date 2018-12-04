@@ -99,13 +99,14 @@ exports.getDog = function (req, res, next){
 
 }
 exports.getAllDogs = function(req,res,next){
-    var array = [];
-    var obj = Dog.findOne();
-    for (var key in obj) {
-        array.push(key);
-    }
-    res.status(201).json({
-        key
+    // Dog.find({ location: "10016", function()})
+    // res.status(201).json({
+    //     // dog: Dog.find({ name: "coco"}).pretty
+    // });
+    Dog.find({}, function (err, allDogs) {
+        res.status(201).json({
+            dog: allDogs
+        })
     });
 }
 
@@ -136,12 +137,6 @@ exports.registerDog = function (req, res, next){
         }
         else{
             let dog = new Dog({
-                // email: email,
-                // password: password,
-                // provider: 'local',
-                // roles: ['User'],
-                // auths: { clients: [clientid], apis: authAPIs },
-                // profile: { firstName: firstName, lastName: lastName }
                 name: name,
                 attributes: attributes,
                 breed: breed,
@@ -158,7 +153,4 @@ exports.registerDog = function (req, res, next){
             });
         }
     });
-    // Dog.findOne({'breed': breed}, function(err, dog) {
-    //     //handle book
-    //   })
 }
