@@ -84,4 +84,4 @@ DogSchema.methods.toJson = function () {
     // provider: this.provider
   }
 }
-module.exports = mongoose.model('dog', DogSchema);
+module.exports = mongoose.model('Dog', DogSchema);
