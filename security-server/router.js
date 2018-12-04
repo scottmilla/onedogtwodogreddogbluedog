@@ -1,7 +1,7 @@
 const AuthenticationController = require('./controllers/authentication'),  
       express = require('express'),
       passportService = require('./security/passport');
-     
+const dogController = require('./controllers/dogController');
 module.exports = function(app) {  
     // Initializing route groups
     const apiRoutes = express.Router(),
@@ -15,7 +15,9 @@ module.exports = function(app) {
     authRoutes.post('/login', AuthenticationController.login);
     // /api/auth/authorize
     authRoutes.get('/authorize',passportService.requireAuth,AuthenticationController.authorize);
-
+    authRoutes.post('/dogRegister',dogController.registerDog);
+    // /api/auth/dogRegister
+    authRoutes.get('/allDogs',dogController.getAllDogs)
     otherRoutes.get('/info',passportService.requireAuth,function(req,res,next){
         res.json({user: req.user.toJson()})});
     apiRoutes.use('/stuff',otherRoutes);
