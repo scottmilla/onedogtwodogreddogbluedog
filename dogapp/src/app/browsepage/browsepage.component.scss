@@ -9,6 +9,14 @@ app-card{
     margin: 5px;
 }
 
+.dog-card{
+    background-color: #edeae5;
+    border-width: 25px !important;
+    border-color: #9fedd7 !important;
+    border-radius: 10px;
+    padding-bottom: 0px;
+}
+
 .dogimg{
     border-radius: 50%;
     width: 200px;
@@ -39,4 +47,7 @@ a:hover{
 
 .text{
     margin:20px 0px;
+}
+#div1{
+    width: 10%;
 }
