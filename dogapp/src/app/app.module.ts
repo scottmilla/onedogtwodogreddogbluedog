@@ -21,7 +21,8 @@ const appRoutes: Routes = [
   {path: 'survey', component: DogsurveyComponent},
   {path: 'register', component: DogregisterComponent},
   {path: 'login', component: LoginpageComponent},
-  {path: 'card', component: CardComponent}
+  {path: 'card', component: CardComponent},
+  {path: 'browse', component: BrowsepageComponent}
 ]
 
 @NgModule({
