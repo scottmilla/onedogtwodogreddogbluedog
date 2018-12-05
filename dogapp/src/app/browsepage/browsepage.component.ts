@@ -42,9 +42,11 @@ export class BrowsepageComponent implements OnInit {
   ngOnInit() {
     this.svc.getAllDogs().subscribe(data=>{
       console.log(data.json().dog[0].name)
-      document.getElementById('div1').innerHTML = this.App();
-      document.getElementById('div2').innerHTML = this.App();
-      document.getElementById('div3').innerHTML = this.App();
+      var i = 0;
+      for (i = 1;i<9;i++){
+        document.getElementById('div'+i).innerHTML = this.App();
+        console.log(i);
+      }
       // this.name = data.json().dog[0].name;
     });
   }

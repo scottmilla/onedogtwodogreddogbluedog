@@ -16,6 +16,7 @@ import { LoginpageComponent } from './loginpage/loginpage.component';
 import { CardComponent } from './card/card.component';
 import { BrowsepageComponent } from './browsepage/browsepage.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: '',component: HomePageComponent},
@@ -49,6 +50,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     ),
     NgbModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [AppComponent],
