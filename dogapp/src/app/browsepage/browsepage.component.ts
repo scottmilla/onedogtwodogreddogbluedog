@@ -43,7 +43,7 @@ export class BrowsepageComponent implements OnInit {
     this.svc.getAllDogs().subscribe(data=>{
       console.log(data.json().dog[0].name)
       var i = 0;
-      for (i = 1;i<9;i++){
+      for (i = 1;i<10;i++){
         document.getElementById('div'+i).innerHTML = this.App();
         console.log(i);
       }
