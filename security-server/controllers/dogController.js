@@ -133,10 +133,21 @@ exports.registerDog = function (req, res, next){
     Dog.findOne({'breed': breed}, function (err, Dog) {
         if (err) { return next(err); }
         else{
-            return res.status(422).send ({error:"complete"})
+            let dog = new Dog({
+                name: name,
+                attributes: attributes,
+                breed: breed,
+                summary: summary,
+                location: location,
+                organization: organization
+            });
+            dog.save(function (err, user) {
+                if (err) { return next(err); }
+                let dogInfo = dog.toJson();
+                res.status(201).json({
+                    dog: dogInfo
+                });
+            });
         }
     });
-    // Dog.findOne({'breed': breed}, function(err, dog) {
-    //     //handle book
-    //   })
 }
