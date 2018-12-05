@@ -28,4 +28,7 @@ module.exports = function(app) {
     // /api/dogs/dogRegister
     dogRoutes.post('/flush',dogController.deleteAllDogs);
     // /api/dogs/flush  --> This flushes out all of the data from the database
+    // dogRoutes.get('/environment=:environment&size=:size&energy:=energy',dogController.filterDogs);
+    dogRoutes.get('/environment=:environment&size=:size&energy=:energy&pets=:pets&alone=:alone&needs=:needs&allergies=:allergies',dogController.filterDogs);
+    // &pets=:pets&alone=:alone&needs=:needs&allergies=:allergies
 };

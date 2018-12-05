@@ -13,6 +13,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DogregisterComponent } from './dogregister/dogregister.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { CardComponent } from './card/card.component';
+import { BrowsepageComponent } from './browsepage/browsepage.component';
 
 const appRoutes: Routes = [
   {path: '',component: HomePageComponent},
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     NavigationbarComponent,
     DogregisterComponent,
     LoginpageComponent,
-    CardComponent
+    CardComponent,
+    BrowsepageComponent
   ],
   imports: [
     BrowserModule,
