@@ -44,6 +44,9 @@ exports.register = function (req, res, next) {
     const lastName = req.body.lastName;
     const password = req.body.password;
     const clientid = req.body.clientid;//Have to pass something in, can be an empty array
+    const phone = req.body.phone;
+    const organization = req.body.organization;
+    const recommended = req.body.recommended;
     let authAPIs = req.body.authAPIs;
 
     if (!authAPIs)
@@ -88,6 +91,9 @@ exports.register = function (req, res, next) {
             let user = new User({
                 email: email,
                 password: password,
+                phone: phone,
+                organization: organization,
+                recommended: recommended,
                 provider: 'local',
                 roles: ['User'],
                 auths: { clients: [clientid], apis: authAPIs },
