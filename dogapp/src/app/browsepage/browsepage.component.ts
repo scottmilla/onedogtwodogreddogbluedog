@@ -8,28 +8,27 @@ import { ConfigService } from '../config-service';
   styleUrls: ['./browsepage.component.scss']
 })
 export class BrowsepageComponent implements OnInit {
-  App = () => {
+  App = (name,breed,summary,size,needs,allergies,age) => {
     return (
-      '<h2> hello world </h2> '+
       '<div class="dog-card"> '+  
         '<div class="box-part text-center"> '+
           '<img class="dogimg" src="https://i.groupme.com/906x1207.jpeg.2ffb71f2feab4c60bf43cc925981072a.large" alt="Coco!!"> '+
           '<div class="title"> '+
-            '<h4>Coco Butler</h4> '+
+            '<h4>'+name+'</h4> '+
           '</div> '+
           '<div class="text"> '+
             '<div> '+
-              '<span><b>Breed:</b> Mutt (probably Long Haired Retriever and Border Collie)<br> '+
-                '<b>Summary:</b> Lazy piece of shit, but the most lovable dog to live on this earth</span> '+
+              '<span><b>Breed:</b>'+breed+'<br>'+
+                '<b>Summary:</b> '+summary+'</span> '+
             '</div> '+
           '</div> '+
-          '<a href="#cocotest" data-toggle="collapse">Learn More</a> '+
-          '<div class="collapse" id="cocotest"> '+
+          '<a href="#'+name+'" data-toggle="collapse">Learn More</a> '+
+          '<div class="collapse" id='+name+'> '+
             '<span> '+
-              '<b>Size:</b> medium<br> '+
-              '<b>Special Needs:</b> none<br> '+
-              '<b>Hypoallergenic?:</b> no<br> '+
-              '<b>Age:</b> 12 years'+
+              '<b>Size:</b> '+size+'<br> '+
+              '<b>Special Needs:</b> '+needs+'<br> '+
+              '<b>Hypoallergenic?:</b> '+allergies+'<br> '+
+              '<b>Age:</b> '+age+''+
             '</span> '+
           '</div> '+
         '</div> '+
@@ -42,8 +41,21 @@ export class BrowsepageComponent implements OnInit {
 
   ngOnInit() {
     this.svc.getAllDogs().subscribe(data=>{
-      console.log(data.json().dog[0].name)
-      document.getElementById('div1').innerHTML = this.App();
+      console.log(data.json().dog)
+      var i = 0;
+      for (i = 1;i<10;i++){
+        if (i<data.json().dog.length+1){
+          var name = data.json().dog[i-1].name;
+          var breed = data.json().dog[i-1].breed;
+          var summary = data.json().dog[i-1].summary;
+          var size = data.json().dog[i-1].attributes.size;
+          var needs = data.json().dog[i-1].attributes.needs;
+          var allergies = data.json().dog[i-1].attributes.allergies;
+          var age = data.json().dog[i-1].attributes.age;
+          document.getElementById('div'+i).innerHTML = this.App(name,breed,summary,size,needs,allergies,age);
+          console.log(i);
+        }
+      }
       // this.name = data.json().dog[0].name;
     });
   }

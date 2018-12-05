@@ -153,6 +153,9 @@ exports.filterDogs = function(req,res,next){
             if ((currDog.attributes.needs == req.params.needs)||(req.params.needs=="NULL")){
                 dogAmount +=1;
             }
+            if ((currDog.attributes.age == req.params.age)||(req.params.age=="NULL")){
+                dogAmount +=1;
+            }
             if ((currDog.attributes.allergies == req.params.allergies)||(req.params.allergies=="NULL")){
                 dogAmount +=1;
             }
@@ -239,6 +242,7 @@ exports.registerDog = function (req, res, next){
     const pets = req.body.pets;
     const alone = req.body.alone;
     const needs = req.body.needs;
+    const age = req.body.age;
     const allergies = req.body.allergies;
     const summary = req.body.summary;
     const location = req.body.location;
@@ -247,7 +251,7 @@ exports.registerDog = function (req, res, next){
         return res.status(422).send ({error: 'No name entered'})
     else if (!breed)
         return res.status(422).send ({error: 'No breed entered'})
-    else if (!environment||!size||!energy||!pets||!alone||!needs||!allergies)
+    else if (!environment||!size||!energy||!pets||!alone||!needs||!allergies||!age)
         return res.status(422).send ({error: 'Put in all attributes'})
     else if (!summary)
         return res.status(422).send ({error: 'No summary entered'})
@@ -256,7 +260,7 @@ exports.registerDog = function (req, res, next){
     else if (!organization)
         return res.status(422).send ({error: 'No organization entered'})
     
-    Dog.findOne({'breed': breed,'organization':organization,'name':name}, function (err, existingDog) {
+    Dog.findOne({'breed': breed,'organization':organization,'name':name,'age':age}, function (err, existingDog) {
         if (err) { return next(err); }
         else{
             let dog = new Dog({
@@ -265,7 +269,7 @@ exports.registerDog = function (req, res, next){
                 breed: breed,
                 summary: summary,
                 location: location,
-                attributes: {environment:environment,size:size,energy:energy,pets:pets,alone:alone,needs:needs,allergies:allergies},
+                attributes: {environment:environment,size:size,energy:energy,pets:pets,alone:alone,needs:needs,age:age,allergies:allergies},
                 organization: organization
             });
             dog.save(function (err, user) {

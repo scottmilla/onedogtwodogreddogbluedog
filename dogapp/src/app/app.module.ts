@@ -51,6 +51,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     ),
     NgbModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [AppComponent],
