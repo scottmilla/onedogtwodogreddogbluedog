@@ -10,7 +10,6 @@ import { ConfigService } from '../config-service';
 export class BrowsepageComponent implements OnInit {
   App = () => {
     return (
-      '<h2> hello world </h2> '+
       '<div class="dog-card"> '+  
         '<div class="box-part text-center"> '+
           '<img class="dogimg" src="https://i.groupme.com/906x1207.jpeg.2ffb71f2feab4c60bf43cc925981072a.large" alt="Coco!!"> '+
@@ -44,6 +43,8 @@ export class BrowsepageComponent implements OnInit {
     this.svc.getAllDogs().subscribe(data=>{
       console.log(data.json().dog[0].name)
       document.getElementById('div1').innerHTML = this.App();
+      document.getElementById('div2').innerHTML = this.App();
+      document.getElementById('div3').innerHTML = this.App();
       // this.name = data.json().dog[0].name;
     });
   }
