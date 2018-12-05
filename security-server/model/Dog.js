@@ -8,8 +8,13 @@ const DogSchema = new Schema({
         required: true
     },
     attributes: {
-        type: Array,
-        required: true
+        environment:{type: String},
+        size: {type: String},
+        energy: {type: String},
+        pets: {type: String},
+        alone:{type: String},
+        needs: {type: String},
+        allergies: {type: String}
     },
     breed: {
         type: String,
