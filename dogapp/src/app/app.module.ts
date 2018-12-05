@@ -14,6 +14,7 @@ import { DogregisterComponent } from './dogregister/dogregister.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { CardComponent } from './card/card.component';
 import { BrowsepageComponent } from './browsepage/browsepage.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: '',component: HomePageComponent},
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
