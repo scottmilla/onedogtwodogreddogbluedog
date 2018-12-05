@@ -9,6 +9,14 @@ app-card{
     margin: 5px;
 }
 
+.dog-card{
+    background-color: #edeae5;
+    border-width: 25px !important;
+    border-color: #9fedd7 !important;
+    border-radius: 10px;
+    padding-bottom: 0px;
+}
+
 .dogimg{
     border-radius: 50%;
     width: 200px;
@@ -16,14 +24,6 @@ app-card{
     /* max-height: 200px; */
     object-fit: cover;
     /* padding-bottom: 0px; */
-}
-
-.card-border{
-    background-color: #edeae5;
-    border-width: 25px !important;
-    border-color: #9fedd7 !important;
-    border-radius: 10px;
-    padding-bottom: 0px;
 }
 
 span{
@@ -45,17 +45,9 @@ a:hover{
     padding:60px 0px;
 }
 
-.box-part{
-    //background:#FFF;
-    //border-radius:0;
-    padding:10px 10px;
-    margin:10px 15px;
-}
-
 .text{
     margin:20px 0px;
 }
-
-.fa{
-     color:#4183D7;
+#div1{
+    width: 10%;
 }

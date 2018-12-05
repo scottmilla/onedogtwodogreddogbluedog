@@ -1,6 +1,7 @@
 const mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
+
 const DogSchema = new Schema({
     name: {
         type: String,
@@ -23,9 +24,10 @@ const DogSchema = new Schema({
         type: String,
         required: true
     },
-    photo: {
+    photo: { 
 
     },
+
     location: {
         type: Number,
         required: true

@@ -9,10 +9,21 @@ const UserSchema = new Schema({
     unique: true,
     required: true
   },
+  phone: {
+    type: Number,
+    required: true
+  },
   password: {
     type: String,
     required: true
   },
+  organization: {
+    type: String,
+    required: true
+  },
+
+  recommended: [String],
+
   profile: {
     firstName: { type: String },
     lastName: { type: String }
@@ -57,8 +68,11 @@ UserSchema.methods.toJson = function () {
     firstName: this.profile.firstName,
     lastName: this.profile.lastName,
     email: this.email,
+    phone: this.phone,
+    organization: this.organization,
     role: this.role,
-    provider: this.provider
+    provider: this.provider,
+
   }
 }
 module.exports = mongoose.model('User', UserSchema);

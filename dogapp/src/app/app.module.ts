@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DogsurveyComponent } from './dogsurvey/dogsurvey.component';
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
   {path: 'survey', component: DogsurveyComponent},
   {path: 'register', component: DogregisterComponent},
   {path: 'login', component: LoginpageComponent},
-  {path: 'card', component: CardComponent}
+  {path: 'card', component: CardComponent},
+  {path: 'browse', component: BrowsepageComponent}
 ]
 
 @NgModule({
@@ -41,6 +43,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
@@ -48,7 +51,7 @@ const appRoutes: Routes = [
     NgbModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

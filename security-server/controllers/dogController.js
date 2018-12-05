@@ -258,9 +258,6 @@ exports.registerDog = function (req, res, next){
     
     Dog.findOne({'breed': breed,'organization':organization,'name':name}, function (err, existingDog) {
         if (err) { return next(err); }
-        else if (existingDog){
-            res.status(422).send ({error: 'Dog Exists'})
-        }
         else{
             let dog = new Dog({
                 name: name,
