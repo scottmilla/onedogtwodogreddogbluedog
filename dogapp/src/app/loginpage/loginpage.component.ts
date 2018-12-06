@@ -3,6 +3,7 @@ import { ConfigService } from '../config-service';
 import { Router } from '@angular/router';
 import {Location} from '@angular/common';
 
+
 @Component({
   selector: 'app-loginpage',
   templateUrl: './loginpage.component.html',
