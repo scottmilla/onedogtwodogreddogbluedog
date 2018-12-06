@@ -17,6 +17,7 @@ import { CardComponent } from './card/card.component';
 import { BrowsepageComponent } from './browsepage/browsepage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ActionspageComponent } from './actionspage/actionspage.component';
 
 const appRoutes: Routes = [
   {path: '',component: HomePageComponent},
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
   {path: 'register', component: DogregisterComponent},
   {path: 'login', component: LoginpageComponent},
   {path: 'card', component: CardComponent},
-  {path: 'browse', component: BrowsepageComponent}
+  {path: 'browse', component: BrowsepageComponent},
+  {path: 'actions', component: ActionspageComponent}
 ]
 
 @NgModule({
@@ -39,7 +41,8 @@ const appRoutes: Routes = [
     DogregisterComponent,
     LoginpageComponent,
     CardComponent,
-    BrowsepageComponent
+    BrowsepageComponent,
+    ActionspageComponent
   ],
   imports: [
     BrowserModule,
