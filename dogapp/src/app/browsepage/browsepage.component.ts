@@ -39,6 +39,9 @@ export class BrowsepageComponent implements OnInit {
   constructor(private svc:ConfigService){}
 
   ngOnInit() {
+    this.svc.getAuth().subscribe(data =>{
+      console.log("in here");
+    })
     this.svc.getAllDogs().subscribe(data=>{
       console.log(data.json().dog)
       var i = 0;

@@ -10,7 +10,7 @@ const UserSchema = new Schema({
     required: true
   },
   phone: {
-    type: Number,
+    type: String,
     required: true
   },
   password: {
@@ -18,8 +18,7 @@ const UserSchema = new Schema({
     required: true
   },
   organization: {
-    type: String,
-    required: true
+    type: String
   },
 
   recommended: [String],
