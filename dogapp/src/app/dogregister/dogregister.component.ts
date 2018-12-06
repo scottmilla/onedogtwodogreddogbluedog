@@ -33,7 +33,7 @@ export class DogregisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitSurvey() {
+  submitDog() {
 
     this.attributes = {"environment": this.environment, "size": this.size, "energy": this.energy, "pets": this.pets, 
     "alone": this.alone, "needs": this.needs, "allergies": this.allergies, "age": this.age};
@@ -41,8 +41,11 @@ export class DogregisterComponent implements OnInit {
     var dogJSON = {"name": this.name, "attributes": this.attributes, "breed": this.breed, "summary": this.summary, 
     "location": this.location, "organization": this.organization, "email": this.email};
 
-    //this.dogPostObj = this.config.postDog(dogJSON);
-    //console.log(this.dogPostObj);
+    this.config.postDog(dogJSON).subscribe(data=>{
+      console.log(data.json());
+      
+      // this.name = data.json().dog[0].name;
+    });
   }
 
 }

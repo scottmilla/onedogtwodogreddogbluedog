@@ -59,5 +59,10 @@ export class ConfigService {
             }),
           }));
     }
+    postDog = (dogObj): Observable<any> =>{
+        const configUrl = "http://localhost:3000/api/dogs";
+        const h: Headers=new Headers();
+        return this.http.post(configUrl,dogObj,{headers: h});
+    }
 }
 
