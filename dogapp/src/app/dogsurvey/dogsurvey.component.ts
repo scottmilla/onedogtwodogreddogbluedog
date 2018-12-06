@@ -11,18 +11,18 @@ import { Config } from 'protractor';
 })
 export class DogsurveyComponent implements OnInit {
 
-  envir: string = '';
-  size: string = '';
-  energy: string = '';
-  timeAlone: string = '';
-  otherPets: string = '';
-  hypoAll: string = '';
-  spNeeds: string = '';
-  age: string = '';
+  envir: string = 'apartment';
+  size: string = 'small';
+  energy: string = 'lazy';
+  timeAlone: string = 'no';
+  otherPets: string = 'low';
+  hypoAll: string = 'no';
+  spNeeds: string = 'yes';
+  age: string = 'senior';
 
-  suggestedDogs = {};
+  suggestedDogs;
 
-  constructor(private config: ConfigService) { }
+  constructor(private svc: ConfigService) { }
 
   ngOnInit() {
   }
@@ -31,9 +31,14 @@ export class DogsurveyComponent implements OnInit {
     
     var answers: string[];
     answers = [this.envir, this.size, this.energy, this.otherPets, this.timeAlone, this.spNeeds, this.hypoAll, this.age];
+    
+    this.svc.getDogFilter(answers).subscribe(data =>{
 
-    this.suggestedDogs = this.config.getDogFilter(answers);
-    console.log(this.suggestedDogs);
+      console.log(data.json());
+      this.svc.getUserDog().subscribe(data=>{
+          console.log(data.json());
+      });
+    });
     
   }
 

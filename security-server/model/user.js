@@ -20,7 +20,9 @@ const UserSchema = new Schema({
   organization: {
     type: String
   },
-
+  dogIDs: {
+    type: Array
+  },
   recommended: [String],
 
   profile: {

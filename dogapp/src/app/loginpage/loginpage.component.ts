@@ -3,6 +3,7 @@ import { ConfigService } from '../config-service';
 import { Router } from '@angular/router';
 import {Location} from '@angular/common';
 
+
 @Component({
   selector: 'app-loginpage',
   templateUrl: './loginpage.component.html',
@@ -39,7 +40,7 @@ export class LoginpageComponent implements OnInit {
 				// window.location.href = "/browse";
 				// window.history.replaceState({}, '',``);
 				this.svc.checkConfig();
-				this.router.navigate(['/browse']);
+				this.router.navigate(['/survey']);
 				// this.router.navigate(['/browse']);
 		});
 	}
@@ -71,6 +72,10 @@ export class LoginpageComponent implements OnInit {
 		"organization": this.organization, "email":this.email, "phone":this.phone, "password": this.pass}
 		this.svc.registerUser(jobj).subscribe(data=>{
 			console.log(data.json());
+			this.user = this.email;
+			this.password = this.pass;
+			this.finishLogin(null);
+			
 		
 		// this.name = data.json().dog[0].name;
 	});

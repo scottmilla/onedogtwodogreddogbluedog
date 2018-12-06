@@ -12,9 +12,40 @@ function generateToken(user) {
 //========================================
 // Login Route
 //========================================
-exports.findByID = function(req,res,next){
-    
-}
+// exports.findDogList = function(req,res,next){
+//     console.log("here")
+//     User.findOne({ 'email': req.body.email }, function (err, user) {
+//         if (err) { return res.status(400).json({ error: "bad data" }); }
+//         let userInfo = user.toJson();
+//         res.status(201).json({
+//             user: userInfo
+//         });
+//     });
+
+// }
+// exports.getDogs = function (req, res, next){
+//     console.log(req.body.email);
+//     // User.Update(req.body.email, req.body.array, {
+//     //     new: true
+//     // },
+//     // function(err, model) {
+//     //     if (!err) {
+//     //         res.status(201).json({
+//     //             data: model
+//     //         });
+//     //     } else {
+//     //         res.status(500).json({
+//     //             message: "not found any relative data"
+//     //         })
+//     //     }
+//     // });
+//     User.findOne({ email: req.body.email }, (err, foundUser) => {
+//         foundUser.status(201).json({
+//             data: model
+//         });
+//     })
+//     // User.Update({email: req.body.email}, {$set: {array: req.body.array}}, function (err, raw) {});
+// }
 
 exports.login = function (req, res, next) {
     User.findOne({ email: req.body.email }, function (err, user) {

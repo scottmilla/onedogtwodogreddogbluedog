@@ -13,7 +13,11 @@ import {MessengerService} from "../app/MessengerService"
 })
 export class ConfigService {
     private messageSubscription: Subscription;
+    private emailSubscription: Subscription;
+    private dogSubscription: Subscription;
+    private dogs;
     private tokenString;
+    private email;
 
     constructor(private http: Http,private httpClient: HttpClient,private messengerService: MessengerService) { 
     }
@@ -23,17 +27,26 @@ export class ConfigService {
     ngOnInit() {
       this.messageSubscription = this.messengerService.message.subscribe(m => {
         // Do something with your value
-        console.log("here"+m);
         this.tokenString=m;
-        console.log(this.tokenString);
+      });
+      this.emailSubscription = this.messengerService.email.subscribe(m => {
+        // Do something with your value
+        this.email=m;
+      });
+      this.dogSubscription = this.messengerService.dog.subscribe(m => {
+        this.dogs=m;
       });
     }
     getData = () =>{
       this.messageSubscription = this.messengerService.message.subscribe(m => {
-        // Do something with your value
-        console.log("here"+m);
         this.tokenString=m;
-        console.log(this.tokenString);
+      });
+      this.emailSubscription = this.messengerService.email.subscribe(m => {
+        this.email=m;
+      });
+      this.dogSubscription = this.messengerService.dog.subscribe(m => {
+        this.dogs=m;
+        console.log(this.dogs);
       });
     }
     getAllDogs = ():Observable<any> => {
@@ -50,16 +63,6 @@ export class ConfigService {
     getAuth = ():Observable<any> =>{
       this.getData();
         console.log(this.tokenString);
-        // login(this.user,this.password).subscribe(data=>{
-        //   console.log(data.json());
-        //   // this.location.go("..")
-        //   // window.location.href = "/browse";
-        //   // window.history.replaceState({}, '',``);
-        //   let testing = this.svc.checkConfig();
-        //   console.log(testing);
-        //   // this.router.navigate(['/browse']);
-        // });
-        // this.token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzA4NWYxNDMzYjJhMmExMzA5MWYzM2YiLCJmaXJzdE5hbWUiOiJKZW5ueSIsImxhc3ROYW1lIjoiVXJiYW4iLCJlbWFpbCI6Imdhcm9jb2xhMjJAeWFob28uY29tIiwicGhvbmUiOiI5MTczOTk4OTA3IiwiaWF0IjoxNTQ0MDUyNTAwLCJleHAiOjE1NDQwNjI1ODB9.cXuNTsczoiUvgq0_OLyfKlVCHYnBmIWbfcBlygZPTu8'
         const configUrl = "http://localhost:3000/api/auth/authorize";
         return this.http.get(configUrl, new RequestOptions({
             headers: new Headers({
@@ -68,15 +71,46 @@ export class ConfigService {
           }))
 
     }
-    setGlobalValue(value: string) {
+    setDogValue(value: string){
+        this.getData();
+        this.messengerService.setDog(value)
+    }
+    setGlobalValue(value: string, email: string) {
       this.getData();
       // All components that are subscribed to the
       // messenger service receive the update
       this.messengerService.setMessage(value);
+      this.messengerService.setEmail(email);
+    }
+    getUserDog = ():Observable<any> => {
+        this.getData();
+        console.log(this.dogs);
+        var numberDogs = [];
+        
+        var array = this.dogs.split(",");
+        for (let i = 0; i<array.length;i++){
+          console.log("AI: "+array[i])
+          numberDogs.push(parseInt(array[i]))
+          console.log(numberDogs[i])
+        }
+        console.log(numberDogs)
+        console.log(array);
+        var myJsonString = JSON.stringify(array);
+        console.log(myJsonString)
+        var finalArray = {"array": + array};
+        console.log(finalArray)
+        const configUrl = "http://localhost:3000/api/dogs/getUserDogs";
+        // console.log(this.tokenString)
+        return this.http.get(configUrl,new RequestOptions({
+          headers: new Headers({
+            Authorization: `Bearer ${this.tokenString}`//called here
+          }),
+        }));
     }
     login = (curremail,currpassword): Observable<any> =>{
       this.getData();
         // const obj = {'email': '"+email+"','password': "+password+"};
+        let tmpEmail=curremail
         var myjson = {"email": curremail, "password": currpassword}
         const configUrl = "http://localhost:3000/api/auth/login/";
         const h: Headers=new Headers();
@@ -104,7 +138,7 @@ export class ConfigService {
                 str+=token.charAt(i);
               }
           }
-          this.setGlobalValue(array[1]);
+          this.setGlobalValue(array[1],curremail);
         });
         return data;
     }
@@ -117,17 +151,43 @@ export class ConfigService {
         const h: Headers=new Headers();
         return this.http.post(configUrl,j,{headers: h});
     }
+    // setUserDog = (array):Observable<any> => {
+    //   // var myJsonString = JSON.stringify(array);
+    //   // console.log(myJsonString);
+    //   var json = ('{"email": "'+this.email+'",')
+
+    //   var finalObj = json+array+"}";
+    //   console.log(finalObj)
+    //   const configUrl = "http://localhost:3000/api/dogs/findDogList";
+    //   const h: Headers=new Headers();
+    //   return this.http.post(configUrl,json,{headers: h});
+    // }
     getDogFilter = (ans):Observable<any> => {
       this.getData();
-        const configUrl = "http://localhost:3000/api/dogs/dogRegister/environment=:" + ans[0] + 
-        "&size=:" + ans[1] + "&energy=:" + ans[2] + "&pets=:" + ans[3] + "&alone=:" 
-        + ans[4] + "&needs=:" + ans[5] + "&allergies=:" + ans[6] + "&age=:" + ans[7];
+      console.log(ans);
+        const configUrl = "http://localhost:3000/api/dogs/environment=" + ans[0] + "&size="
+         + ans[1] + "&energy=" + ans[2] + "&pets=" + ans[3] + "&alone=" 
+        + ans[4] + "&needs=" + ans[5] + "&allergies=" + ans[6] + "&age=" + ans[7];
+        console.log(configUrl)
         const h: Headers=new Headers();
-        return this.http.get(configUrl,new RequestOptions({
-            headers: new Headers({
-              Authorization: `Bearer ${this.tokenString}`
-            }),
-          }));
+        this.http.get(configUrl, new RequestOptions({
+          headers: new Headers({
+            Authorization: `Bearer ${this.tokenString}` //called here
+          }),
+        })).subscribe(data =>{
+          let str = data.json().dog.toString();
+          console.log(str);
+          this.setDogValue(str);
+          //MOVE THIS TO getUserDog()
+        })
+        var data = this.http.get(configUrl, new RequestOptions({
+          headers: new Headers({
+            Authorization: `Bearer ${this.tokenString}` //called here
+          }),
+        }))
+        return data;
+        // console.log(testing);
+        // return testing
     }
     postDog = (dogObj): Observable<any> =>{
         const configUrl = "http://localhost:3000/api/dogs/dogRegister";
