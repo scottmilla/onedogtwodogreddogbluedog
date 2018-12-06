@@ -122,8 +122,17 @@ exports.getAllDogs = function(req,res,next){
 // function dogToJson(currDog){
 //     return currDog.toJson();
 // }
+exports.getUserDog = function(req,res,next){
+    console.log(req.body);
+    Dog.find({}, function (err, foundDogs) {
+        res.status(201).json({
+            dog: foundDogs
+        })
+    });
+}
 
 exports.filterDogs = function(req,res,next){
+    console.log("here")
     var items = new Array(res.size);
     var counter = 0;
     var dogAmount =0;
@@ -200,40 +209,47 @@ exports.filterDogs = function(req,res,next){
         // .catch((err) => res.send(err));
         
         
-        
-        
-        
-        
-        const async = require('async')
-// FIX ME: this isn't correctly handled! 
-        let results = []
-
-        async.each(dogIDs, function(element, callback) {
-            // console.log('Processing todo ' + element)
-            Dog.findOne({'_id':element}, function (err, existingDog){
-                if(err){
-                    callback(err)
-                } else {
-                    // console.log(results);
-                    results.push(existingDog)
-                    callback(null, existingDog)
-                }
-                
-            });
-
-
-        }, function(err) {
-            if(err) {
-                console.log('A element failed to process', err)
-                res.status(500).json(err)
-            } else {
-                console.log('All elements have been processed successfully')
-                console.log(results)
-                // array with the results of each removeTodo job
-                res.status(200).json(results) 
-            }
+        res.status(201).json({
+            dog: dogIDs
         })
+        
+        
+        
     });
+}
+exports.findDogsInArray = function (req,res,next){
+    console.log(req.body)
+    console.log("here")
+    const async = require('async')
+// FIX ME: this isn't correctly handled! 
+    let results = []
+    dogIDs = req.body.array;
+    console.log(req.body.array)
+    async.each(dogIDs, function(element, callback) {
+        // console.log('Processing todo ' + element)
+        Dog.findOne({'_id':element}, function (err, existingDog){
+            if(err){
+                callback(err)
+            } else {
+                // console.log(results);
+                results.push(existingDog)
+                callback(null, existingDog)
+            }
+            
+        });
+
+
+    }, function(err) {
+        if(err) {
+            console.log('A element failed to process', err)
+            res.status(500).json(err)
+        } else {
+            console.log('All elements have been processed successfully')
+            console.log(results)
+            // array with the results of each removeTodo job
+            res.status(201).json(results) 
+        }
+    })
 }
 
 exports.registerDog = function (req, res, next){
