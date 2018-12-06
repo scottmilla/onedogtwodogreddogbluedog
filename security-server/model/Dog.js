@@ -26,19 +26,14 @@ const DogSchema = new Schema({
         required: true
     },
     //photo: { },
-    location: {
-        type: Number,
-        required: true
-    },
     organization: {
         type: String,
         required: true
     },
     email: {
      type: String,
-     lowercase: true,
-     unique: true,
-     required: true
+     lowercase: true
+     //required: true
    },
 //   password: {
 //     type: String,
@@ -80,7 +75,6 @@ DogSchema.methods.toJson = function () {
     attributes: this.attributes,
     breed: this.breed,
     summary: this.summary,
-    location: this.location,
     environment: this.attributes.environment,
     size: this.attributes.size,
     energy: this.attributes.energy,
@@ -88,7 +82,8 @@ DogSchema.methods.toJson = function () {
     alone: this.attributes.alone,
     needs: this.attributes.needs,
     allergies: this.attributes.allergies,
-    age: this.attributes.age
+    age: this.attributes.age,
+    email: this.email
   }
 }
 module.exports = mongoose.model('Dog', DogSchema);
