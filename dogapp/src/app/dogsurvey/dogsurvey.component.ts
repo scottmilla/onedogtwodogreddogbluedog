@@ -11,14 +11,14 @@ import { Config } from 'protractor';
 })
 export class DogsurveyComponent implements OnInit {
 
-  envir: string = 'apartment';
-  size: string = 'small';
-  energy: string = 'lazy';
-  timeAlone: string = 'no';
-  otherPets: string = 'low';
-  hypoAll: string = 'no';
-  spNeeds: string = 'yes';
-  age: string = 'senior';
+  envir: string = 'NULL';
+  size: string = 'NULL';
+  energy: string = 'NULL';
+  timeAlone: string = 'NULL';
+  otherPets: string = 'NULL';
+  hypoAll: string = 'NULL';
+  spNeeds: string = 'NULL';
+  age: string = 'NULL';
 
   suggestedDogs;
 
