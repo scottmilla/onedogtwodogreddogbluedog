@@ -21,7 +21,7 @@ export class BrowsepageComponent implements OnInit {
             '<h4>'+name+'</h4> '+
           '</div> '+
           '<div class="text"> '+
-            '<div> '+
+            '<div style="height: 75px"> '+
               '<span><b>Breed:</b>'+breed+'<br>'+
                 '<b>Summary:</b> '+summary+'</span> '+
             '</div> '+
