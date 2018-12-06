@@ -29,7 +29,7 @@ body{
     color: #424242;
     text-align: center;
     margin: auto;
-    width: 100%;
+    width: 102.5%;
     margin-top: 6%;
     margin-bottom: 4%;
     display: flex;
@@ -46,4 +46,12 @@ body{
 
 #image-input{
     padding-left: 15% !important;
+}
+
+select{
+    width: 102.5%;
+}
+
+textarea{
+    width: 110%;
 }
