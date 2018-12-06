@@ -189,5 +189,10 @@ export class ConfigService {
         // console.log(testing);
         // return testing
     }
+    postDog = (dogObj): Observable<any> =>{
+        const configUrl = "http://localhost:3000/api/dogs/dogRegister";
+        const h: Headers=new Headers();
+        return this.http.post(configUrl,dogObj,{headers: h});
+    }
 }
 
