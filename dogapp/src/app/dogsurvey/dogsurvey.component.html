@@ -4,78 +4,78 @@
     <form id='requestForm'>
       <div class="form-group">
         <label for="ageSelect">I am looking for a:</label>
-        <select [(ngModel)]="age" class="form-control" id="ageSelect" name="ageSelect">
-          <option [ngValue]="NULL" selected>...</option>
-          <option [ngValue]="puppy">Puppy</option>
-          <option [ngValue]="adult">Adult</option>
-          <option [ngValue]="senior">Senior</option>
+        <select [(ngModel)]="age" class="form-control" id="ageSelect" name="ageSelect" (change) = "ageVal($event)">
+          <option value="NULL" selected>...</option>
+          <option value="puppy">Puppy</option>
+          <option value="adult">Adult</option>
+          <option value="senior">Senior</option>
         </select>
       </div>
       
       <div class="form-group">
         <label for="environmentSelect">I will raise my dog at:</label>
-        <select [(ngModel)]="envir" class="form-control" id="environmentSelect" name="environmentSelect" >
-          <option [ngValue]="NULL" selected>...</option>
-          <option [ngValue]="house">House</option>
-          <option [ngValue]="apartment">Apartment</option>
-          <option [ngValue]="countryside">Countryside</option>
+        <select [(ngModel)]="envir" class="form-control" id="environmentSelect" name="environmentSelect" (change) = "environment($event)">
+          <option value="NULL" selected>...</option>
+          <option value="house">House</option>
+          <option value="apartment">Apartment</option>
+          <option value="countryside">Countryside</option>
         </select>
       </div>
       
       <div class="form-group">
         <label for="sizeSelect">I want a dog that is:</label>
-        <select [(ngModel)]="size" class="form-control" id="sizeSelect" name="sizeSelect" >
-          <option [ngValue]="NULL" selected>...</option>
-          <option [ngValue] = "small">Small</option>
-          <option [ngValue] = "medium">Medium</option>
-          <option [ngValue] = "large">Large</option>
+        <select [(ngModel)]="size" class="form-control" id="sizeSelect" name="sizeSelect" (change) = "sizeDeter($event)">
+          <option value="NULL" selected>...</option>
+          <option value = "small">Small</option>
+          <option value = "medium">Medium</option>
+          <option value = "large">Large</option>
         </select>
       </div>
       
       <div class="form-group">
         <label for="energySelect">My dog's energy level should be:</label>
-        <select [(ngModel)]="energy" class="form-control" id="energySelect" name="energySelect">
-          <option [ngValue]="NULL" selected="selected">...</option>
-          <option [ngValue]="high">High</option>
-          <option [ngValue]="medium">Medium</option>
-          <option [ngValue]="low">Low</option>
+        <select [(ngModel)]="energy" class="form-control" id="energySelect" name="energySelect" (change) = "energyDeter($event)">
+          <option value="NULL" selected="selected">...</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
         </select>
       </div>
       
       <div class="form-group">
         <label for="timeSelect">My dog will be alone:</label>
-        <select [(ngModel)]="timeAlone" class="form-control" id="timeSelect" name="timeSelect">
-          <option [ngValue]="NULL" selected>...</option>
-          <option [ngValue]="short">Very little</option>
-          <option [ngValue]="medium">Most of every day</option>
-          <option [ngValue]="long">Multiple days at a time</option>
+        <select [(ngModel)]="timeAlone" class="form-control" id="timeSelect" name="timeSelect" (change) = "alone($event)">
+          <option value="NULL" selected>...</option>
+          <option value="short">Very little</option>
+          <option value="medium">Most of every day</option>
+          <option value="long">Multiple days at a time</option>
         </select>
       </div>
 
       <div class="form-group">
         <label for="otherSelect">Do you own other pets?</label>
-        <select [(ngModel)]="otherPets" class="form-control" id="otherSelect" name="otherSelect" >
-          <option [ngValue]="NULL" selected>...</option>
-          <option [ngValue]="yes">Yes</option>
-          <option [ngValue]="no">No</option>
+        <select [(ngModel)]="otherPets" class="form-control" id="otherSelect" name="otherSelect"(change) = "pets($event)" >
+          <option value="NULL" selected>...</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
         </select>
       </div>  
          
       <div class="form-group">
         <label for="hypoSelect">Does your dog need to be hypoallergenic?</label>
-        <select [(ngModel)]="hypoAll" class="form-control" id="hypoSelect" name="hypoSelect">
-          <option [ngValue]="NULL" selected>...</option>
-          <option [ngValue]="Yes">Yes</option>
-          <option [ngValue]="No">No</option>
+        <select [(ngModel)]="hypoAll" class="form-control" id="hypoSelect" name="hypoSelect" (change) = "hypoAller($change)">
+          <option value="NULL" selected>...</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
         </select>
       </div>
 
       <div class="form-group">
         <label for="specialSelect">Are you open to a dog with special needs?</label>
-        <select [(ngModel)]="spNeeds" class="form-control" id="specialSelect" name="specialSelect">
-          <option [ngValue]="NULL" selected>...</option>
-          <option [ngValue]="Yes">Yes</option>
-          <option [ngValue]="No">No</option>
+        <select [(ngModel)]="spNeeds" class="form-control" id="specialSelect" name="specialSelect" (change) = "specNeed($change)">
+          <option value="NULL" selected>...</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
         </select>
       </div>  
       
