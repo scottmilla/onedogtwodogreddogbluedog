@@ -175,8 +175,9 @@ exports.filterDogs = function(req,res,next){
         });
         console.log("before sort: "+items);
         items = items.sort(function(a,b) {
-            return a[0] - b[0];
+            return a[1] - b[1];
         });
+        
         console.log("after sort: "+items);
         var dogIDs = new Array();
         var i = 0;
