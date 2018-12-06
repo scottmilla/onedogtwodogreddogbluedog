@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from '../config-service';
+import { Router } from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-loginpage',
@@ -8,7 +10,7 @@ import { ConfigService } from '../config-service';
 })
 export class LoginpageComponent implements OnInit {
 
-  constructor(private svc:ConfigService) { }
+  constructor(private svc:ConfigService,private location: Location,private router: Router) { }
 	user = "";
 	password = "";
   ngOnInit() {
@@ -24,6 +26,12 @@ export class LoginpageComponent implements OnInit {
 	finishLogin(event){
 		this.svc.login(this.user,this.password).subscribe(data=>{
 				console.log(data.json());
+				// this.location.go("..")
+				// window.location.href = "/browse";
+				// window.history.replaceState({}, '',``);
+				let testing = this.svc.checkConfig();
+				console.log(testing);
+				// this.router.navigate(['/browse']);
 		});
 	}
 }
