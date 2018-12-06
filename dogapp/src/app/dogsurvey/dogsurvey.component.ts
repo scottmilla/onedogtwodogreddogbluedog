@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ConfigService } from '../config-service';
+import { Router } from '@angular/router';
 import { Config } from 'protractor';
 
 @Component({
@@ -11,10 +12,10 @@ import { Config } from 'protractor';
 })
 export class DogsurveyComponent implements OnInit {
 
-  envir: string = 'NULL';
-  size: string = 'NULL';
-  energy: string = 'NULL';
-  timeAlone: string = 'NULL';
+  envir: string = 'apartment';
+  size: string = 'small';
+  energy: string = 'lazy';
+  timeAlone: string = 'no';
   otherPets: string = 'NULL';
   hypoAll: string = 'NULL';
   spNeeds: string = 'NULL';
@@ -22,7 +23,7 @@ export class DogsurveyComponent implements OnInit {
 
   suggestedDogs;
 
-  constructor(private svc: ConfigService) { }
+  constructor(private svc: ConfigService,private router: Router) { }
 
   ngOnInit() {
   }
@@ -32,11 +33,11 @@ export class DogsurveyComponent implements OnInit {
     answers = [this.envir, this.size, this.energy, this.otherPets, this.timeAlone, this.spNeeds, this.hypoAll, this.age];
     
     this.svc.getDogFilter(answers).subscribe(data =>{
-
       console.log(data.json());
-      this.svc.getUserDog().subscribe(data=>{
-          console.log(data.json());
-      });
+      this.router.navigate(['/browse']);
+      // this.svc.getUserDog().subscribe(data=>{
+      //     console.log(data.json());
+      // });
     });
     
   }

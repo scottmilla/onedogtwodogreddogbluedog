@@ -39,22 +39,22 @@ export class BrowsepageComponent implements OnInit {
   constructor(private svc:ConfigService){}
 
   ngOnInit() {
-    this.svc.getAuth().subscribe(data =>{
-      console.log("in here");
-    })
-    this.svc.getAllDogs().subscribe(data=>{
-      console.log(data.json().dog)
+    // this.svc.getAuth().subscribe(data =>{
+    //   console.log("in here");
+    // })
+    this.svc.getUserDog().subscribe(data=>{
+      console.log(data.json().length)
       var i = 0;
       for (i = 1;i<10;i++){
-        if (i<data.json().dog.length+1){
-          var name = data.json().dog[i-1].name;
-          var breed = data.json().dog[i-1].breed;
-          var summary = data.json().dog[i-1].summary;
-          var size = data.json().dog[i-1].attributes.size;
-          var needs = data.json().dog[i-1].attributes.needs;
-          var allergies = data.json().dog[i-1].attributes.allergies;
-          var age = data.json().dog[i-1].attributes.age;
-          var id = data.json().dog[i-1]._id;
+        if (i<data.json().length+1){
+          var name = data.json()[i-1].name;
+          var breed = data.json()[i-1].breed;
+          var summary = data.json()[i-1].summary;
+          var size = data.json()[i-1].attributes.size;
+          var needs = data.json()[i-1].attributes.needs;
+          var allergies = data.json()[i-1].attributes.allergies;
+          var age = data.json()[i-1].attributes.age;
+          var id = data.json()[i-1]._id;
           var imageLink = "https://i.groupme.com/906x1207.jpeg.2ffb71f2feab4c60bf43cc925981072a.large";
           console.log(name);
           console.log(id);
