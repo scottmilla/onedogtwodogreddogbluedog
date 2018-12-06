@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from '../config-service';
+import { Router } from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-loginpage',
@@ -8,11 +10,20 @@ import { ConfigService } from '../config-service';
 })
 export class LoginpageComponent implements OnInit {
 
-  constructor(private svc:ConfigService) { }
+  constructor(private svc:ConfigService,private location: Location,private router: Router) { }
+	firstName = '';
+	lastName = '';
+	organization = '';
+	phone = '';
+	email = '';
+	username = '';
+	pass = '';
 	user = "";
 	password = "";
   ngOnInit() {
-  }
+	}
+
+	//login functions
 	loginformchange(event){
 		this.user = event.srcElement.value
 		console.log(this.user);
@@ -24,8 +35,50 @@ export class LoginpageComponent implements OnInit {
 	finishLogin(event){
 		this.svc.login(this.user,this.password).subscribe(data=>{
 				console.log(data.json());
+				// this.location.go("..")
+				// window.location.href = "/browse";
+				// window.history.replaceState({}, '',``);
+				let testing = this.svc.checkConfig();
+				console.log(testing);
+				// this.router.navigate(['/browse']);
 		});
 	}
+
+	//register functions
+	firstname(event){
+		this.firstName = event.srcElement.value;
+	}
+	lastname(event){
+		this.lastName = event.srcElement.value;
+	}
+	org(event){
+		this.organization = event.srcElement.value;
+	}
+	phonechange(event){
+		this.phone = event.srcElement.value;
+	}
+	emailchange(event){
+		this.email = event.srcElement.value;
+	}
+	userchange(event){
+		this.username = event.srcElement.value;
+	}
+	passchange(event){
+		this.pass = event.srcElement.value;
+	}
+	registerUser(event){
+		var jobj = {"clientid": "0", "firstName":this.firstName,"lastName":this.lastName,
+		"organization": this.organization, "email":this.email, "phone":this.phone, "password": this.pass}
+		this.svc.registerUser(jobj).subscribe(data=>{
+			console.log(data.json());
+		
+		// this.name = data.json().dog[0].name;
+	});
+  
+
+
+
+}
 }
 
 /* not sure where to put below code or if it's needed: it was in the online thing
