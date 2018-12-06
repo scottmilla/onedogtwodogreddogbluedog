@@ -1,46 +1,14 @@
-<!--
-<div class="btn-group btn-group-toggle">
-  <label class="btn-primary" ngbButtonLabel>
-    <input type="checkbox" ngbButton ="model.left"> Left (pre-checked)
-  </label>
-  <label class="btn-primary" ngbButtonLabel>
-    <input type="checkbox" ngbButton ="model.middle"> Middle
-  </label>
-  <label class="btn-primary" ngbButtonLabel>
-    <input type="checkbox" ngbButton="model.right"> Right
-  </label>
-</div>
--->
-
-<!-- Bootstrap Imports 
--->
-<!-- Latest compiled and minified CSS -->
 <head>
   
 </head>
 
 <body>
-<!--
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
--->
-<!-- Latest compiled JavaScript -->
+  <router-outlet>
 
-<!--
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
--->
+  </router-outlet>
+  <router-outlet>
+    
+  </router-outlet>
 
-<!--
-<script> 
-  $('.carousel').carousel()
-</script>
--->
-
-<router-outlet>
-
-</router-outlet>
-<router-outlet>
-  
-</router-outlet>
-
-<app-navigationbar></app-navigationbar>
+  <app-navigationbar></app-navigationbar>
 </body>
