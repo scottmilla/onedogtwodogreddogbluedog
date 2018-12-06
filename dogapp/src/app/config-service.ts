@@ -97,11 +97,11 @@ export class ConfigService {
         console.log(array);
         var myJsonString = JSON.stringify(array);
         console.log(myJsonString)
-        var finalArray = {"array": + array};
-        console.log(finalArray)
+        var myjson = {"array": array}
+        console.log(myjson)
         const configUrl = "http://localhost:3000/api/dogs/getUserDogs";
         // console.log(this.tokenString)
-        return this.http.get(configUrl,new RequestOptions({
+        return this.http.post(configUrl,myjson,new RequestOptions({
           headers: new Headers({
             Authorization: `Bearer ${this.tokenString}`//called here
           }),
