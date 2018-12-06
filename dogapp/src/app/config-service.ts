@@ -30,15 +30,15 @@ export class ConfigService {
     }
     getAuth = ():Observable<any> =>{
         console.log(this.token);
-        login(this.user,this.password).subscribe(data=>{
-          console.log(data.json());
-          // this.location.go("..")
-          // window.location.href = "/browse";
-          // window.history.replaceState({}, '',``);
-          let testing = this.svc.checkConfig();
-          console.log(testing);
-          // this.router.navigate(['/browse']);
-        });
+        // login(this.user,this.password).subscribe(data=>{
+        //   console.log(data.json());
+        //   // this.location.go("..")
+        //   // window.location.href = "/browse";
+        //   // window.history.replaceState({}, '',``);
+        //   let testing = this.svc.checkConfig();
+        //   console.log(testing);
+        //   // this.router.navigate(['/browse']);
+        // });
         // this.token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzA4NWYxNDMzYjJhMmExMzA5MWYzM2YiLCJmaXJzdE5hbWUiOiJKZW5ueSIsImxhc3ROYW1lIjoiVXJiYW4iLCJlbWFpbCI6Imdhcm9jb2xhMjJAeWFob28uY29tIiwicGhvbmUiOiI5MTczOTk4OTA3IiwiaWF0IjoxNTQ0MDUyNTAwLCJleHAiOjE1NDQwNjI1ODB9.cXuNTsczoiUvgq0_OLyfKlVCHYnBmIWbfcBlygZPTu8'
         const configUrl = "http://localhost:3000/api/auth/authorize";
         return this.http.get(configUrl, new RequestOptions({
