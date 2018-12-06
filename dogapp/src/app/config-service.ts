@@ -119,7 +119,7 @@ export class ConfigService {
     }
     getDogFilter = (ans):Observable<any> => {
       this.getData();
-        const configUrl = "http://localhost:3000/api/dogs/environment=:" + ans[0] + 
+        const configUrl = "http://localhost:3000/api/dogs/dogRegister/environment=:" + ans[0] + 
         "&size=:" + ans[1] + "&energy=:" + ans[2] + "&pets=:" + ans[3] + "&alone=:" 
         + ans[4] + "&needs=:" + ans[5] + "&allergies=:" + ans[6] + "&age=:" + ans[7];
         const h: Headers=new Headers();
@@ -128,6 +128,11 @@ export class ConfigService {
               Authorization: `Bearer ${this.tokenString}`
             }),
           }));
+    }
+    postDog = (dogObj): Observable<any> =>{
+        const configUrl = "http://localhost:3000/api/dogs";
+        const h: Headers=new Headers();
+        return this.http.post(configUrl,dogObj,{headers: h});
     }
 }
 
