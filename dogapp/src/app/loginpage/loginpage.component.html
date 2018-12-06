@@ -53,8 +53,8 @@
               <label for="passwordRegister">Password: </label><br>
               <input type="text" name="passwordReg" style="width: 90%" (change)="passchange($event)"><br>
           </div>  
-          <form action="/login"> <!-- is this how to route?? -->
-            <button type="submit" class="btn btn-primary submitbutton" (click)="registerUser($event)"></button>
+          <form routerLink="login">
+            <button type="submit" class="btn btn-primary submitbutton" (click)="registerUser($event)">Register</button>
           </form>        
         </form>
       </div>

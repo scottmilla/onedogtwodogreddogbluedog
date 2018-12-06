@@ -1,18 +1,18 @@
-<app-carousel class="border-bottom our-carousel"></app-carousel>
-<!-- What We Do will go here -->
-<div id="whatwedo" class="border-bottom">
-  <app-whatwedo></app-whatwedo>
-</div>
-<!-- Quiz component will go here -->
-<div id="quizcomponent" class="border-bottom">
-  <form action="" routerLink="survey"> <!-- is this how to route?? -->
-    <button type="submit" class="btn btn-primary submitbutton">Looking to adopt?</button>
-  </form> <!-- Do they have to be in different divs? Can change -->
-  <form action="" routerLink="/register"> <!-- is this how to route?? -->
-    <button type="submit" class="btn btn-primary submitbutton">Looking to register?</button>
-  </form>
-</div>
-<div id="aboutus" class="border-bottom">
-  <app-aboutus></app-aboutus>
-</div>
-<app-navigationbar class="border-bottom"></app-navigationbar>
+<body style="background-color: #f5f3f0;">
+  <app-carousel class="border-bottom our-carousel"></app-carousel>
+  <div id="whatwedo" class="border-bottom">
+    <app-whatwedo></app-whatwedo>
+  </div>
+  <div id="quizcomponent" class="border-bottom">
+    <form action="" routerLink="survey">
+      <button type="submit" class="btn btn-primary submitbutton">Looking to adopt?</button>
+    </form> 
+    <form action="" routerLink="/register">
+      <button type="submit" class="btn btn-primary submitbutton">Looking to register?</button>
+    </form>
+  </div>
+  <div id="aboutus" class="border-bottom">
+    <app-aboutus></app-aboutus>
+  </div>
+  <app-navigationbar class="border-bottom"></app-navigationbar>
+</body>
