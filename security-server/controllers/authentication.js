@@ -12,6 +12,10 @@ function generateToken(user) {
 //========================================
 // Login Route
 //========================================
+exports.findByID = function(req,res,next){
+    
+}
+
 exports.login = function (req, res, next) {
     User.findOne({ email: req.body.email }, function (err, user) {
         if (err) { return res.status(400).json({ error: "bad data" }); }
