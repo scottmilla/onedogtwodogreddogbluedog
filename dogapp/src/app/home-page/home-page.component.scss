@@ -1,14 +1,5 @@
-.btn:focus,.btn:active {
-    outline: none !important;
-    box-shadow: none !important;
- }
-
- .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
-    outline: 0;
-}
-
 .submitbutton{
-    padding-top: -15px;
+    // padding-top: -15px;
     background-color: #eef7f4;
     color: #424242;
     text-align: center;
@@ -18,10 +9,8 @@
     display: flex;
     justify-content: center;
     font-size: 200%;
-    border: 4px, #303030 !important;
+    border: 5px #424242;
     margin: 20px;
-    outline: none !important;
-    box-shadow: none !important;
 }
 
 .submitbutton:hover{ 
@@ -33,7 +22,9 @@
 #whatwedo{
     /* background-color: lightgray; */
     padding-top: 55px;
-    background-color: #f5f3f0;
+    // background-color: #edeae5;
+    background-color: #edeae5;
+
 }
 
 #quizcomponent{
@@ -56,7 +47,7 @@
     /* background-color: white; */
     color: #303030;
     padding-top: 50px;
-    background-color: #f5f3f0;
+    background-color: #edeae5;
 }
 
 /* This is the CSS stuff for the link that I used for About Us and What We Do.
@@ -65,7 +56,7 @@ body {
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
     color: #818181;
-    background-color: #f5f3f0;
+    background-color: #edeae5;
 }
 h2 {
     font-size: 24px;

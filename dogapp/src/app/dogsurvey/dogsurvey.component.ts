@@ -18,6 +18,7 @@ export class DogsurveyComponent implements OnInit {
   otherPets: string = '';
   hypoAll: string = '';
   spNeeds: string = '';
+  age: string = '';
 
   suggestedDogs = {};
 
@@ -32,7 +33,7 @@ export class DogsurveyComponent implements OnInit {
 
     //create observable, then send observable to service and do http post in the service
     var answers: string[];
-    answers = [this.envir, this.size, this.energy, this.otherPets, this.timeAlone, this.spNeeds, this.hypoAll];
+    answers = [this.envir, this.size, this.energy, this.otherPets, this.timeAlone, this.spNeeds, this.hypoAll, this.age];
 
     this.suggestedDogs = this.config.getDogFilter(answers);
     console.log(this.suggestedDogs);
