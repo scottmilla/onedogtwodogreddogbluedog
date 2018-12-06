@@ -37,9 +37,6 @@ export class DogregisterComponent implements OnInit {
 
   submitDog() {
 
-    const myimg = new FormData();
-    myimg.append('image', this.image, this.image.name);
-
     this.attributes = {"environment": this.environment, "size": this.size, "energy": this.energy, "pets": this.pets, 
     "alone": this.alone, "needs": this.needs, "allergies": this.allergies, "age": this.age};
 
@@ -57,7 +54,6 @@ export class DogregisterComponent implements OnInit {
     "location": this.location,
     "organization": this.organization,
     "email": this.email,
-    "image": myimg
     };
 
     this.config.postDog(dogJSON).subscribe(data=>{

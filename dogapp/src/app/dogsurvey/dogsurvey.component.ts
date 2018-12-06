@@ -28,7 +28,6 @@ export class DogsurveyComponent implements OnInit {
   }
 
   submitSurvey() {
-    
     var answers: string[];
     answers = [this.envir, this.size, this.energy, this.otherPets, this.timeAlone, this.spNeeds, this.hypoAll, this.age];
     
