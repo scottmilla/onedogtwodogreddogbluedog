@@ -38,8 +38,8 @@ export class LoginpageComponent implements OnInit {
 				// this.location.go("..")
 				// window.location.href = "/browse";
 				// window.history.replaceState({}, '',``);
-				let testing = this.svc.checkConfig();
-				console.log(testing);
+				this.svc.checkConfig();
+				this.router.navigate(['/browse']);
 				// this.router.navigate(['/browse']);
 		});
 	}
