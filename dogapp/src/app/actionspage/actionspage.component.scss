@@ -1,0 +1,34 @@
+body{
+    padding-top: 14vh;
+    padding-bottom: 0px;
+}
+
+#action-background{
+    background-color: #fce181;
+    border-radius: 25px;
+    height: 80vh;
+}
+
+.submitbutton{
+    background-color: #eef7f4;
+    color: #424242;
+    text-align: center;
+    margin: auto;
+    width: 95%;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    font-size: 200%;
+    border: 5px #424242;
+    margin: 20px;
+}
+
+.submitbutton:hover{ 
+    color: #424242;
+    background-color: #d4f7ec;
+}
+
+h1{
+    font-size: 3em;
+    color: #424242;
+}

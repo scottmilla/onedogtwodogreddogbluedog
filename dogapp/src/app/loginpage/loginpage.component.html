@@ -14,7 +14,7 @@
           <form id="requestForm" (change)="passwordformchange($event)">
             <div class="form-group left-margin">
               <label for="passwordLogin">Password:</label><br>
-              <input type="text" name="passwordlog" style="width: 90%" id = "passwordogin"><br>
+              <input type="password" name="passwordlog" style="width: 90%" id = "passwordogin"><br>
             </div>
           </form>
           <form > <!-- is this how to route?? -->
@@ -51,9 +51,9 @@
             </div>
           <div class="form-group left-margin">
               <label for="passwordRegister">Password: </label><br>
-              <input type="text" name="passwordReg" style="width: 90%" (change)="passchange($event)"><br>
+              <input type="password" name="passwordReg" style="width: 90%" (change)="passchange($event)"><br>
           </div>  
-          <form>
+          <form routerLink="/login">
             <button type="submit" class="btn btn-primary submitbutton" (click)="registerUser($event)">Register</button>
           </form>        
         </form>

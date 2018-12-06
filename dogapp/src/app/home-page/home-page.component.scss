@@ -1,10 +1,9 @@
 .submitbutton{
-    // padding-top: -15px;
     background-color: #eef7f4;
     color: #424242;
     text-align: center;
     margin: auto;
-    width: 60vh;
+    width: 80vh;
     height: 15vh;
     display: flex;
     justify-content: center;
@@ -15,14 +14,11 @@
 
 .submitbutton:hover{ 
     color: #424242;
-    /* background-color: #ebf8f9; */
     background-color: #d4f7ec;
 }
 
 #whatwedo{
-    /* background-color: lightgray; */
     padding-top: 55px;
-    // background-color: #edeae5;
     background-color: #edeae5;
 
 }
@@ -44,7 +40,6 @@
 }
 
 #aboutus{
-    /* background-color: white; */
     color: #303030;
     padding-top: 50px;
     background-color: #edeae5;

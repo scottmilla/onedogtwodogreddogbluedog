@@ -20,7 +20,6 @@ body{
     background-color: #fefce6;
     padding-top: 20px;
     padding-bottom: 10px;
-    //font-size: 0.70em;
 }
 
 .submitbutton{
@@ -30,25 +29,29 @@ body{
     color: #424242;
     text-align: center;
     margin: auto;
-    width: 100%;
+    width: 102.5%;
     margin-top: 6%;
     margin-bottom: 4%;
-    /* height: 100px; */
     display: flex;
     justify-content: center;
     border: 4px #303030;
-    /* margin: 20px; */
     outline: none !important;
     box-shadow: none !important;
 }
 
 .submitbutton:hover{ 
     color: #424242;
-    /* background-color: #ebf8f9; */
     background-color: #d4f7ec;
 }
 
 #image-input{
-    /* text-align: center; */
     padding-left: 15% !important;
+}
+
+select{
+    width: 102.5%;
+}
+
+textarea{
+    width: 110%;
 }
