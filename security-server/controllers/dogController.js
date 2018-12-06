@@ -97,8 +97,7 @@ const Dog = require('../model/Dog');
 
 exports.getDog = function (req, res, next){
     console.log('breed:', req.params.breed);
-    console.log('location:',req.params.location);
-    Dog.find({'breed':req.params.breed,'location':req.params.location}, function (err, foundDogs) {
+    Dog.find({'breed':req.params.breed}, function (err, foundDogs) {
         res.status(201).json({
             dog: foundDogs
         })
@@ -248,8 +247,8 @@ exports.registerDog = function (req, res, next){
     const age = req.body.age;
     const allergies = req.body.allergies;
     const summary = req.body.summary;
-    const location = req.body.location;
     const organization = req.body.organization;
+    const email = req.body.email;
     if (!name)
         return res.status(422).send ({error: 'No name entered'})
     else if (!breed)
@@ -258,8 +257,6 @@ exports.registerDog = function (req, res, next){
         return res.status(422).send ({error: 'Put in all attributes'})
     else if (!summary)
         return res.status(422).send ({error: 'No summary entered'})
-    else if (!location)
-        return res.status(422).send ({error: 'No location entered'})
     else if (!organization)
         return res.status(422).send ({error: 'No organization entered'})
     
@@ -271,7 +268,6 @@ exports.registerDog = function (req, res, next){
                 // attributes: attributes,
                 breed: breed,
                 summary: summary,
-                location: location,
                 attributes: {environment:environment,size:size,energy:energy,pets:pets,alone:alone,needs:needs,age:age,allergies:allergies},
                 organization: organization
             });

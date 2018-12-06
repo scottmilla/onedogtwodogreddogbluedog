@@ -38,8 +38,20 @@ export class DogregisterComponent implements OnInit {
     this.attributes = {"environment": this.environment, "size": this.size, "energy": this.energy, "pets": this.pets, 
     "alone": this.alone, "needs": this.needs, "allergies": this.allergies, "age": this.age};
 
-    var dogJSON = {"name": this.name, "attributes": this.attributes, "breed": this.breed, "summary": this.summary, 
-    "location": this.location, "organization": this.organization, "email": this.email};
+    var dogJSON = {"name": this.name,
+    "environment": this.environment,
+    "size": this.size,
+    "energy": this.energy,
+    "pets": this.pets,
+    "alone": this.alone,
+    "age": this.age,
+    "needs": this.needs,
+    "allergies": this.allergies,
+    "breed": this.breed,
+    "summary": this.summary,
+    "location": this.location,
+    "organization": this.organization,
+    "email": this.email};
 
     this.config.postDog(dogJSON).subscribe(data=>{
       console.log(data.json());
