@@ -32,14 +32,8 @@ const DogSchema = new Schema({
     },
     email: {
      type: String,
-<<<<<<< HEAD
-     lowercase: true,
-     unique: true,
-    //  required: true
-=======
      lowercase: true
      //required: true
->>>>>>> 0315722b5612419de3add36b5c1902ba93a86e1b
    },
 //   password: {
 //     type: String,
@@ -89,11 +83,7 @@ DogSchema.methods.toJson = function () {
     needs: this.attributes.needs,
     allergies: this.attributes.allergies,
     age: this.attributes.age,
-<<<<<<< HEAD
-    email: this.attributes.email
-=======
     email: this.email
->>>>>>> 0315722b5612419de3add36b5c1902ba93a86e1b
   }
 }
 module.exports = mongoose.model('Dog', DogSchema);
