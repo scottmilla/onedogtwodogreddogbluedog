@@ -59,8 +59,8 @@ export class BrowsepageComponent implements OnInit {
           var allergies = data.json()[i-1].attributes.allergies;
           var age = data.json()[i-1].attributes.age;
           var id = data.json()[i-1]._id;
-          var random = Math.floor((Math.random() * 8));
-          var imageLink = this.dogs[random];
+          // var random = Math.floor((Math.random() * 8));
+          var imageLink = this.dogs[i];
           console.log(name);
           console.log(id);
           document.getElementById('div'+i).innerHTML = this.App(name,breed,summary,size,needs,allergies,age,"dog"+i,imageLink);
