@@ -141,6 +141,7 @@ exports.filterDogs = function(req,res,next){
             var dogArray = new Array(3);
             console.log(currDog.name);
             console.log(currDog.attributes.environment);
+            console.log(req.params);
             console.log(req.params.environment);
             dogAmount = 0;
             if ((currDog.attributes.environment==req.params.environment)||(req.params.environment=="NULL")){
@@ -174,8 +175,8 @@ exports.filterDogs = function(req,res,next){
             items.push(dogArray);
         });
         console.log("before sort: "+items);
-        items = items.sort(function(a,b) {
-            return a[1] - b[1];
+        items.sort(function(a,b){
+            return b[1] - a[1];
         });
         
         console.log("after sort: "+items);

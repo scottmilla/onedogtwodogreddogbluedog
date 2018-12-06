@@ -31,7 +31,7 @@ export class DogsurveyComponent implements OnInit {
   submitSurvey() {
     var answers: string[];
     answers = [this.envir, this.size, this.energy, this.otherPets, this.timeAlone, this.spNeeds, this.hypoAll, this.age];
-    
+    console.log(answers);
     this.svc.getDogFilter(answers).subscribe(data =>{
       console.log(data.json());
       this.router.navigate(['/browse']);
