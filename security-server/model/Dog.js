@@ -14,7 +14,8 @@ const DogSchema = new Schema({
         pets: {type: String},
         alone:{type: String},
         needs: {type: String},
-        allergies: {type: String}
+        allergies: {type: String},
+        age: {type:String}
     },
     breed: {
         type: String,
@@ -27,7 +28,6 @@ const DogSchema = new Schema({
     photo: { 
 
     },
-
     location: {
         type: Number,
         required: true
@@ -83,7 +83,15 @@ DogSchema.methods.toJson = function () {
     attributes: this.attributes,
     breed: this.breed,
     summary: this.summary,
-    location: this.location
+    location: this.location,
+    environment: this.attributes.environment,
+    size: this.attributes.size,
+    energy: this.attributes.energy,
+    pets: this.attributes.pets,
+    alone: this.attributes.alone,
+    needs: this.attributes.needs,
+    allergies: this.attributes.allergies,
+    age: this.attributes.age
     // firstName: this.profile.firstName,
     // lastName: this.profile.lastName,
     // email: this.email,

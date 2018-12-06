@@ -9,7 +9,6 @@ import { ConfigService } from '../config-service';
 export class CardComponent implements OnInit {
   App = () => {
     return (
-      '<h2>hello world</h2>'+
       '<div class="dog-card">'+  
         '<div class="box-part text-center">'+
           '<img class="dogimg" src="https://i.groupme.com/906x1207.jpeg.2ffb71f2feab4c60bf43cc925981072a.large" alt="Coco!!">'+

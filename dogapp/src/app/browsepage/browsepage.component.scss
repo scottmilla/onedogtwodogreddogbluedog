@@ -1,15 +1,15 @@
-body{
+::ng-deep body{
     background-color: #fefce6;
     padding-top: 20px;
     padding-bottom: 10px;
 }
 
-app-card{
+::ng-deep app-card{
     width: 100%;
     margin: 5px;
 }
 
-.dog-card{
+::ng-deep .dog-card{
     background-color: #edeae5;
     border-width: 25px !important;
     border-color: #9fedd7 !important;
@@ -17,7 +17,7 @@ app-card{
     padding-bottom: 0px;
 }
 
-.dogimg{
+::ng-deep .dogimg{
     border-radius: 50%;
     width: 200px;
     max-height: 200px;
@@ -26,28 +26,32 @@ app-card{
     /* padding-bottom: 0px; */
 }
 
-span{
+::ng-deep span{
     font-size:15px;
 }
 
-a{
+::ng-deep a{
     text-decoration:none; 
     color: #026670;
     border-bottom:2px solid #026670;
 }
 
-a:hover{
+::ng-deep a:hover{
     color: #232323;
     border-bottom: 2px solid #232323;
 }
 
-.box{
+::ng-deep .box{
     padding:60px 0px;
 }
 
-.text{
-    margin:20px 0px;
+::ng-deep .box-part{
+    //background:#FFF;
+    //border-radius:0;
+    padding:10px 10px;
+    margin:10px 15px;
 }
-#div1{
-    width: 10%;
+
+::ng-deep .text{
+    margin:20px 0px;
 }
