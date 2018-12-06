@@ -12,4 +12,9 @@ export class ConfigService {
         const h: Headers=new Headers();
         return this.http.get(configUrl,{headers: h});
     }
+    registerUser = ():Observable<any> => {
+        const configUrl = "http://localhost:3000/api/auth/register";
+        const h: Headers=new Headers();
+        return this.http.get(configUrl,{headers: h});
+    }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ConfigService } from '../config-service';
 @Component({
   selector: 'app-loginpage',
   templateUrl: './loginpage.component.html',
@@ -7,11 +7,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginpageComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+	firstName = '';
+	lastName = '';
+	organization = '';
+	phone = '';
+	email = '';
+	username = '';
+	password = '';
+	constructor(private svc:ConfigService){
   }
+  ngOnInit() {
+	}
 
+	firstname(event){
+		this.firstName = event.srcElement.value;
+	}
+	lastname(event){
+		this.lastName = event.srcElement.value;
+	}
+	org(event){
+		this.organization = event.srcElement.value;
+	}
+	phonechange(event){
+		this.phone = event.srcElement.value;
+	}
+	emailchange(event){
+		this.email = event.srcElement.value;
+	}
+	userchange(event){
+		this.username = event.srcElement.value;
+	}
+	passchange(event){
+		this.password = event.srcElement.value;
+	}
+	registerUser(event){
+		this.svc.registerUser().subscribe(data=>{
+		console.log(data.json().dog[0].name);
+		
+		// this.name = data.json().dog[0].name;
+	});
+	}
 }
 
 /* not sure where to put below code or if it's needed: it was in the online thing

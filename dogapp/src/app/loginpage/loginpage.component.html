@@ -20,37 +20,37 @@
       </div>
       <div id="register-form" class="col-sm-4">
         <br><h2 style="text-align: center">Register</h2><br>
-        <form id="requestForm" (change)="formchange($event)">
+        <form id="requestForm" >
           <div class="form-group left-margin">
             <label for="firstNameRegister">First name:</label><br>
-            <input type="text" name="firstNameReg" style="width: 90%"><br>
+            <input type="text" name="firstNameReg" style="width: 90%" (change)="firstname($event)"><br>
           </div>
           <div class="form-group left-margin">
             <label for="lastNameRegister">Last name:</label><br>
-            <input type="text" name="lastNameReg" style="width: 90%"><br>
+            <input type="text" name="lastNameReg" style="width: 90%" (change)="lastname($event)"><br>
           </div>
           <div class="form-group left-margin">
             <label for="organizationRegister">Organization name (optional): </label>
-            <input type="text" name="organizationReg" style="width: 90%"><br>
+            <input type="text" name="organizationReg" style="width: 90%" (change)="org($event)"><br>
           </div>
           <div class="form-group left-margin">
             <label for="phoneRegister">Phone number:</label><br>
-            <input type="text" name="phoneReg" style="width: 90%"><br>
+            <input type="text" name="phoneReg" style="width: 90%" (change)="phonechange($event)"><br>
           </div>
           <div class="form-group left-margin">
               <label for="emailRegister">Email address:</label><br>
-              <input type="text" name="emailReg" style="width: 90%"><br>
+              <input type="text" name="emailReg" style="width: 90%" (change)="emailchange($event)"><br>
             </div>
           <div class="form-group left-margin">
               <label for="usernameRegister">Username: </label><br>
-              <input type="text" name="usernameReg" style="width: 90%"><br>
+              <input type="text" name="usernameReg" style="width: 90%" (change)="userchange($event)"><br>
             </div>
           <div class="form-group left-margin">
               <label for="passwordRegister">Password: </label><br>
-              <input type="text" name="passwordReg" style="width: 90%"><br>
+              <input type="text" name="passwordReg" style="width: 90%" (change)="passchange($event)"><br>
           </div>  
           <form action="/login"> <!-- is this how to route?? -->
-            <button type="submit" class="btn btn-primary submitbutton">Register</button>
+            <button type="submit" class="btn btn-primary submitbutton" (click)="registerUser($event)"></button>
           </form>        
         </form>
       </div>
