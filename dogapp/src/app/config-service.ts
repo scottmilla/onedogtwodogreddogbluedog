@@ -3,11 +3,7 @@ import { Http, Headers } from '@angular/http';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable, config } from 'rxjs';
 import { RequestOptions } from '@angular/http';
-import {
-    HttpServiceClient,
-    HttpRequest,
-    HttpMethod
-  } from 'mongodb-stitch-browser-services-http';
+
 
 
 @Injectable({
@@ -89,6 +85,12 @@ export class ConfigService {
     setToken = (token) =>{
       
     }
+    registerUser = (j):Observable<any> => {
+        const configUrl = "http://localhost:3000/api/auth/register";
+        const h: Headers=new Headers();
+        return this.http.post(configUrl,j,{headers: h});
+
+    }
     getDogFilter = (ans):Observable<any> => {
         const configUrl = "http://localhost:3000/api/dogs/environment=:" + ans[0] + 
         "&size=:" + ans[1] + "&energy=:" + ans[2] + "&pets=:" + ans[3] + "&alone=:" 
@@ -101,3 +103,4 @@ export class ConfigService {
           }));
     }
 }
+
