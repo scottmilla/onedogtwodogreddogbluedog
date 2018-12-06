@@ -71,7 +71,11 @@ export class LoginpageComponent implements OnInit {
 			this.user = this.email;
 			this.password = this.pass;
 			this.finishLogin(null);
-			
+			this.svc.login(this.user,this.password).subscribe(data=>{
+				console.log(data.json());
+				this.svc.checkConfig();
+				this.router.navigate(['/survey']);
+			});
 		
 		// this.name = data.json().dog[0].name;
 	});
