@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from '../config-service';
+import { Router } from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-loginpage',
@@ -8,6 +10,7 @@ import { ConfigService } from '../config-service';
 })
 export class LoginpageComponent implements OnInit {
 
+  constructor(private svc:ConfigService,private location: Location,private router: Router) { }
 	firstName = '';
 	lastName = '';
 	organization = '';
@@ -17,8 +20,6 @@ export class LoginpageComponent implements OnInit {
 	pass = '';
 	user = "";
 	password = "";
-	constructor(private svc:ConfigService){
-  }
   ngOnInit() {
 	}
 
@@ -34,6 +35,12 @@ export class LoginpageComponent implements OnInit {
 	finishLogin(event){
 		this.svc.login(this.user,this.password).subscribe(data=>{
 				console.log(data.json());
+				// this.location.go("..")
+				// window.location.href = "/browse";
+				// window.history.replaceState({}, '',``);
+				this.svc.checkConfig();
+				this.router.navigate(['/browse']);
+				// this.router.navigate(['/browse']);
 		});
 	}
 
@@ -63,7 +70,7 @@ export class LoginpageComponent implements OnInit {
 		var jobj = {"clientid": "0", "firstName":this.firstName,"lastName":this.lastName,
 		"organization": this.organization, "email":this.email, "phone":this.phone, "password": this.pass}
 		this.svc.registerUser(jobj).subscribe(data=>{
-		console.log(data.json());
+			console.log(data.json());
 		
 		// this.name = data.json().dog[0].name;
 	});
