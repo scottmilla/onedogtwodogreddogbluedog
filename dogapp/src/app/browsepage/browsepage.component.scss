@@ -1,7 +1,12 @@
 ::ng-deep body{
-    background-color: #fefce6;
+    //background-color: #fefce6;
     //padding-top: 20px;
     padding-bottom: 10px;
+}
+
+::ng-deep .box{
+    background-color: #fefce6;
+
 }
 
 ::ng-deep app-card{
