@@ -176,6 +176,9 @@ exports.filterDogs = function(req,res,next){
             dogIDs.push(items[i][0]);
         }
         console.log(dogIDs);
+
+        //push dogIDs into user
+
         // let promiseArr = []
         // items.forEach(function(currDog) {
         //     Dog.findOne({'_id':'5c06a71eaf83855d3db86da1'}, function (err, existingDog){

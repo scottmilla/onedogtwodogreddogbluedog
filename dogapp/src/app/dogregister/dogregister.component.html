@@ -12,14 +12,23 @@
         <input [(ngModel)]="breed" type="text" name="breed" style="width: 100%" class="col-sm-9" placeholder="Breed"><br>
       </div>
       <div class="form-group">
+        <label for="ageReg">This dog is a:</label>
+        <select [(ngModel)]="age" name="ageReg" class="form-control" id="ageReg">
+          <option selected>...</option>
+          <option value="puppy">Puppy</option>
+          <option value="adult">Adult</option>
+          <option value="senior">Senior</option>
+        </select>
+      </div>
+      <div class="form-group">
         <label for="summaryReg" class="row" style="padding-left: 15px">Add a quick summary about your dog: </label>
         <textarea [(ngModel)]="summary" name="summary" rows="10" cols="30" style="width: 100%" placeholder="Enter text here"></textarea>
       </div>
 
-      <div class="form-group">
-        <label for="photoReg">Add a photo of your dog: </label><br>
-        <input type="file" name="photo" accept="image/*" id="image-input"> <br>
-      </div>
+        <div class="form-group">
+          <label for="photoReg">Add a photo of your dog: </label><br>
+          <input type="file" name="photo" accept="image/*" id="image-input"> <br>
+        </div>
 
       <div class="form-group row">
         <label for="orgNameReg" class="col-sm-5 left-text">Name of your rescue organization: </label><br>
