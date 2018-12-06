@@ -21,9 +21,7 @@
     border-radius: 50%;
     width: 200px;
     max-height: 200px;
-    /* max-height: 200px; */
     object-fit: cover;
-    /* padding-bottom: 0px; */
 }
 
 ::ng-deep span{
@@ -46,8 +44,6 @@
 }
 
 ::ng-deep .box-part{
-    //background:#FFF;
-    //border-radius:0;
     padding:10px 10px;
     margin:10px 15px;
 }
