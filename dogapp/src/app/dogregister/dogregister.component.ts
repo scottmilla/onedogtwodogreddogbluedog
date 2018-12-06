@@ -61,6 +61,7 @@ export class DogregisterComponent implements OnInit {
       
       // this.name = data.json().dog[0].name;
     });
+    alert("Success! Thank you for submitting your dog.");
   }
 
   onFileSelected(event){
