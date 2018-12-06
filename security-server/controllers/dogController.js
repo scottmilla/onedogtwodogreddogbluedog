@@ -250,6 +250,7 @@ exports.registerDog = function (req, res, next){
     const summary = req.body.summary;
     const location = req.body.location;
     const organization = req.body.organization;
+    const organization = req.body.email;
     if (!name)
         return res.status(422).send ({error: 'No name entered'})
     else if (!breed)
