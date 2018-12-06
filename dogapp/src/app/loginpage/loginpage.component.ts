@@ -36,12 +36,8 @@ export class LoginpageComponent implements OnInit {
 	finishLogin(event){
 		this.svc.login(this.user,this.password).subscribe(data=>{
 				console.log(data.json());
-				// this.location.go("..")
-				// window.location.href = "/browse";
-				// window.history.replaceState({}, '',``);
 				this.svc.checkConfig();
 				this.router.navigate(['/survey']);
-				// this.router.navigate(['/browse']);
 		});
 	}
 
