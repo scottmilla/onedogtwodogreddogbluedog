@@ -16,13 +16,13 @@ module.exports = function(app) {
     authRoutes.post('/login', AuthenticationController.login);
     // /api/auth/authorize
     authRoutes.get('/authorize',passportService.requireAuth,AuthenticationController.authorize);
-    
+    // /api/info
     otherRoutes.get('/info',passportService.requireAuth,function(req,res,next){
         res.json({user: req.user.toJson()})});
     apiRoutes.use('/stuff',otherRoutes);
     apiRoutes.use('/dogs',dogRoutes);
     app.use('/api', apiRoutes);
-    dogRoutes.get('/allDogs',dogController.getAllDogs);
+    dogRoutes.get('/allDogs',passportService.requireAuth,dogController.getAllDogs);
     // /api/dogs/allDogs
     dogRoutes.post('/dogRegister',dogController.registerDog);
     // /api/dogs/dogRegister

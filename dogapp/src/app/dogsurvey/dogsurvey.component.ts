@@ -37,6 +37,7 @@ export class DogsurveyComponent implements OnInit {
 
     this.suggestedDogs = this.config.getDogFilter(answers);
     console.log(this.suggestedDogs);
+    
   }
 
 }

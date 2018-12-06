@@ -4,17 +4,21 @@
       <div class="col-sm-2"></div>
       <div id="login-form" class="col-sm-4">
         <br><h2 style="text-align: center">Login</h2><br>
-        <form id="requestForm" (change)="formchange($event)">
-          <div class="form-group left-margin">
-            <label for="usernameLogin">Username:</label><br>
-            <input type="text" name="usernamelog" style="width: 90%"><br>
-          </div>
-          <div class="form-group left-margin">
-            <label for="passwordLogin">Password:</label><br>
-            <input type="text" name="passwordlog" style="width: 90%"><br>
-          </div>
-          <form routerLink="login">
-            <button type="submit" class="btn btn-primary submitbutton">Login</button>
+        <form id="requestForm">
+          <form id="requestForm" (change)="loginformchange($event)">
+            <div class="form-group left-margin">
+              <label for="usernameLogin">Username:</label><br>
+              <input type="text" name="usernamelog" style="width: 90%" id = "usernamelogin"><br>
+            </div>
+          </form>
+          <form id="requestForm" (change)="passwordformchange($event)">
+            <div class="form-group left-margin">
+              <label for="passwordLogin">Password:</label><br>
+              <input type="text" name="passwordlog" style="width: 90%" id = "passwordogin"><br>
+            </div>
+          </form>
+          <form action="/login"> <!-- is this how to route?? -->
+            <button type="submit" class="btn btn-primary submitbutton" (click) = "finishLogin($event)">Login</button>
           </form>        
         </form>
       </div>

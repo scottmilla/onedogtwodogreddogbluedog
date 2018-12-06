@@ -15,6 +15,7 @@ function generateToken(user) {
 exports.login = function (req, res, next) {
     User.findOne({ email: req.body.email }, function (err, user) {
         if (err) { return res.status(400).json({ error: "bad data" }); }
+        console.log(req.body.email);
         if (!user) { return res.status(400).json({ error: 'Your login details could not be verified. Please try again.' }); }
         user.comparePassword(req.body.password, function (err, isMatch) {
             if (err) { return res.status(400).json({ error: "bad data" }); }
@@ -30,6 +31,7 @@ exports.login = function (req, res, next) {
 }
 
 exports.authorize = function (req, res, next) {
+    console.log("true");
     return res.status(200).json({
         validated: true
     })
