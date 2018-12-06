@@ -20,7 +20,6 @@ export class LoginpageComponent implements OnInit {
 	pass = '';
 	user = "";
 	password = "";
-	
   ngOnInit() {
 	}
 
@@ -71,7 +70,7 @@ export class LoginpageComponent implements OnInit {
 		var jobj = {"clientid": "0", "firstName":this.firstName,"lastName":this.lastName,
 		"organization": this.organization, "email":this.email, "phone":this.phone, "password": this.pass}
 		this.svc.registerUser(jobj).subscribe(data=>{
-		console.log(data.json());
+			console.log(data.json());
 		
 		// this.name = data.json().dog[0].name;
 	});
