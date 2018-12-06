@@ -1,10 +1,20 @@
 
 <body>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
   <div id="question-width">
     <form id='requestForm'>
       <div class="form-group">
-        <label for="environmentSelect">I will raise my dog at</label>
+        <label for="ageSelect">I am looking for a:</label>
+        <select [(ngModel)]="age" class="form-control" id="ageSelect" name="ageSelect">
+          <option [ngValue]="NULL" selected>...</option>
+          <option [ngValue]="puppy">Puppy</option>
+          <option [ngValue]="adult">Adult</option>
+          <option [ngValue]="senior">Senior</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="environmentSelect">I will raise my dog at:</label>
         <select [(ngModel)]="envir" class="form-control" id="environmentSelect" name="environmentSelect" >
           <option [ngValue]="NULL" selected>...</option>
           <option [ngValue]="house">House</option>
@@ -14,7 +24,7 @@
       </div>
       
       <div class="form-group">
-        <label for="sizeSelect">I want a dog that is</label>
+        <label for="sizeSelect">I want a dog that is:</label>
         <select [(ngModel)]="size" class="form-control" id="sizeSelect" name="sizeSelect" >
           <option [ngValue]="NULL" selected>...</option>
           <option [ngValue] = "small">Small</option>
@@ -24,7 +34,7 @@
       </div>
       
       <div class="form-group">
-        <label for="energySelect">My dog's energy level should be</label>
+        <label for="energySelect">My dog's energy level should be:</label>
         <select [(ngModel)]="energy" class="form-control" id="energySelect" name="energySelect">
           <option [ngValue]="NULL" selected="selected">...</option>
           <option [ngValue]="high">High</option>
@@ -34,7 +44,7 @@
       </div>
       
       <div class="form-group">
-        <label for="timeSelect">My dog will be alone</label>
+        <label for="timeSelect">My dog will be alone:</label>
         <select [(ngModel)]="timeAlone" class="form-control" id="timeSelect" name="timeSelect">
           <option [ngValue]="NULL" selected>...</option>
           <option [ngValue]="short">Very little</option>
